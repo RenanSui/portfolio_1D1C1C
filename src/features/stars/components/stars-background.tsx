@@ -8,10 +8,14 @@ import { StarsSmall } from './stars-small'
 const Stars = () => {
   const [screenSize, setScreenSize] = useState(getCurrentDimension())
 
+  const small = arrayMaker(Math.floor(screenSize.width / 64))
+  const medium = arrayMaker(Math.floor(screenSize.width / 38))
+  const big = arrayMaker(Math.floor(screenSize.width / 64))
+
   const Stars = {
-    small: arrayMaker(Math.floor(screenSize.width / 64)),
-    medium: arrayMaker(Math.floor(screenSize.width / 38)),
-    big: arrayMaker(Math.floor(screenSize.width / 64)),
+    Small: small.map((_, index) => <StarsSmall key={`A${index}`} index={index} size={screenSize} />),
+    Medium: medium.map((_, index) => <StarsMedium key={`B${index}`} index={index} size={screenSize} />),
+    Big: big.map((_, index) => <StarsBig key={`C${index}`} index={index} size={screenSize} />),
   }
 
   useEffect(() => {
@@ -25,17 +29,9 @@ const Stars = () => {
     <AnimatedShell exit={{ opacity: 0, transition: { duration: 2 } }}>
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 top-0 z-[10000] h-full w-full">
         <div className="fixed bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden">
-          {Stars.small.map((_, index) => (
-            <StarsSmall key={`B${index}`} index={index} size={screenSize} />
-          ))}
-
-          {Stars.medium.map((_, index) => (
-            <StarsMedium key={`B${index}`} index={index} size={screenSize} />
-          ))}
-
-          {Stars.big.map((_, index) => (
-            <StarsBig key={`C${index}`} index={index} size={screenSize} />
-          ))}
+          {Stars.Small}
+          {Stars.Medium}
+          {Stars.Big}
         </div>
 
         <div className="absolute bottom-0 z-10 h-[30px] w-full backdrop-blur-[3px] md:h-[100px]" />
