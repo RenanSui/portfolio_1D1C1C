@@ -1,7 +1,7 @@
 import { NierButton, NierLine, NierPattern, NierVignette } from '@/features/nier'
 import Link from 'next/link'
 
-export default function Home() {
+export default function ResumePage() {
   return (
     <main className="relative flex min-h-screen flex-col bg-nier-light-100">
       <div className="pointer-events-none absolute left-0 top-0 h-full w-full bg-[url(/assets/wallpapers/light-theme-1440.png)] bg-cover" />
