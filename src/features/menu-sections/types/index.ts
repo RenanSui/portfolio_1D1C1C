@@ -27,6 +27,7 @@ export type ProjectItem = {
   description: string
   liveDemoLink: string
   githubLink: string
+  technologies?: string[]
 }
 
 export type SocialItem = {

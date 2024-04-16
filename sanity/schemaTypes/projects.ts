@@ -42,5 +42,11 @@ export default defineType({
       title: 'Github Link of your project',
       initialValue: '',
     }),
+    defineField({
+      name: 'technologies',
+      type: 'array',
+      title: 'Technologies used',
+      of: [{ type: 'string' }],
+    }),
   ],
 })

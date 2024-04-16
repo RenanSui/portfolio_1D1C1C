@@ -64,7 +64,7 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
       </section>
 
       <section id="projects" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-        <div className="relative top-0 z-[60] -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+        <div className="relative top-0 z-[60] -mx-6 mb-8 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
           <h2 className="font-bold uppercase tracking-widest text-nier-light-900 ">PROJECTS</h2>
         </div>
         <ul className="group/list">
@@ -89,6 +89,17 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
                       </a>
                     </h3>
                     <p className="mt-2 text-sm leading-normal">{project.description}</p>
+                    <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
+                      {project.technologies?.map((tec, index) => {
+                        return (
+                          <li className="mr-1.5 mt-2" key={`tec-${index}`}>
+                            <span className="flex items-center rounded-full bg-nier-light-900/30 px-3 py-1 text-xs font-medium leading-5 text-nier-light-100">
+                              {tec}
+                            </span>
+                          </li>
+                        )
+                      })}
+                    </ul>
                   </div>
                   <Image
                     src={urlForImage(project.titleImage)}

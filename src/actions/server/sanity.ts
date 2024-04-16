@@ -15,7 +15,8 @@ export async function getProjects(): Promise<ProjectItem[]> {
       titleImage,
       description,
       liveDemoLink,
-      githubLink
+      githubLink,
+      technologies
     }`
 
       return await client.fetch<ProjectItem[]>(query)
