@@ -11,8 +11,8 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
   return (
     <main className="z-[60] pt-24 text-neutral-900 lg:w-1/2 lg:py-24">
       <section id="about" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-        <div className="top-0 z-20 -mx-6 mb-4 w-screen  px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-          <h2 className="font-bold uppercase tracking-widest text-nier-light-900 lg:sr-only">ABOUT</h2>
+        <div className="relative top-0 z-[60] -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12  lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+          <h2 className="font-bold uppercase tracking-widest text-nier-light-900 ">ABOUT</h2>
         </div>
         <p className="mb-4">
           Back in 2010, I decided to try my hand at building private servers for my favorite games with my friends and
@@ -40,8 +40,8 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
       </section>
 
       <section id="experience" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-        <div className="top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-          <h2 className="font-bold uppercase tracking-widest text-nier-light-900 lg:sr-only">EXPERIENCE</h2>
+        <div className="relative top-0 z-[60] -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12  lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+          <h2 className="font-bold uppercase tracking-widest text-nier-light-900 ">EXPERIENCE</h2>
         </div>
         {/* <div className="mt-12"> */}
         <div className="">
@@ -64,8 +64,8 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
       </section>
 
       <section id="projects" className="">
-        <div className="top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-          <h2 className="font-bold uppercase tracking-widest text-nier-light-900 lg:sr-only">PROJECTS</h2>
+        <div className="relative top-0 z-[60] -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12  lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+          <h2 className="font-bold uppercase tracking-widest text-nier-light-900 ">PROJECTS</h2>
         </div>
         <ul className="group/list">
           {projects.map((project) => {
@@ -105,6 +105,52 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
           })}
         </ul>
       </section>
+
+      <footer className="relative z-[70] max-w-md pb-16 text-sm text-nier-light-900/70 sm:pb-0">
+        <p>
+          Coded in{' '}
+          <a
+            href="https://code.visualstudio.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-medium text-nier-light-900 transition-colors duration-150 hover:text-red-600 focus-visible:text-red-600"
+            aria-label="Visual Studio Code (opens in a new tab)"
+          >
+            Visual Studio Code{' '}
+          </a>
+          by yours truly. Built with{' '}
+          <a
+            href="https://nextjs.org/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-medium text-nier-light-900 transition-colors duration-150 hover:text-red-600 focus-visible:text-red-600"
+            aria-label="Next.js (opens in a new tab)"
+          >
+            Next.js{' '}
+          </a>
+          and{' '}
+          <a
+            href="https://tailwindcss.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-medium text-nier-light-900 transition-colors duration-150 hover:text-red-600 focus-visible:text-red-600"
+            aria-label="Tailwind CSS (opens in a new tab)"
+          >
+            Tailwind CSS
+          </a>
+          , Deployed with{' '}
+          <a
+            href="https://vercel.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-medium text-nier-light-900 transition-colors duration-150 hover:text-red-600 focus-visible:text-red-600"
+            aria-label="Vercel (opens in a new tab)"
+          >
+            Vercel
+          </a>
+          .
+        </p>
+      </footer>
     </main>
   )
 }
