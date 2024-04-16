@@ -18,10 +18,15 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
           Back in 2010, I decided to try my hand at building private servers for my favorite games with my friends and
           although I was successful in certain aspects I quickly gave up and forgot about it due to problems related to
           my personal life. Fast forward to today, I ended up giving another chance to
-          <span className="font-bold"> programming </span>
+          <span className="font-bold transition-colors duration-150 hover:text-nier-alert-500"> programming </span>
           and
-          <span className="font-bold"> game development</span>, but little did I know I was going to be pulled into the
-          <span className="font-bold"> web development</span> side.
+          <span className="font-bold transition-colors duration-150 hover:text-nier-alert-500"> game development</span>,
+          but little did I know I was going to be pulled into the
+          <span className="font-bold transition-colors duration-150 hover:text-nier-alert-500">
+            {' '}
+            web development
+          </span>{' '}
+          side.
         </p>
         <p className="mb-4">
           My main focus these days is building accessible user-centered interfaces. I most enjoy building software in
