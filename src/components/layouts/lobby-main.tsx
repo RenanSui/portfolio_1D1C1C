@@ -92,7 +92,7 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
                       {project.technologies?.map((tec, index) => {
                         return (
                           <li className="mr-1.5 mt-2" key={`tec-${index}`}>
-                            <span className="flex items-center rounded-full bg-nier-light-900/30 px-3 py-1 text-xs font-medium leading-5 text-nier-light-100">
+                            <span className="flex items-center rounded-full bg-nier-light-900/40 px-3 py-1 text-xs font-medium leading-5 text-nier-light-100/80 group-hover:bg-nier-light-900/50 group-hover:text-nier-light-100/90">
                               {tec}
                             </span>
                           </li>
