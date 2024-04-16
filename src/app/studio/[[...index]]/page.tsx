@@ -16,7 +16,7 @@ import config from '../../../../sanity.config'
 export default function StudioPage() {
   return (
     <>
-      <button className="m-1 rounded bg-white p-1" onClick={revalidateItems}>
+      <button className="m-1 rounded bg-white p-1" onClick={() => revalidateItems()}>
         Revalidate Items
       </button>
 

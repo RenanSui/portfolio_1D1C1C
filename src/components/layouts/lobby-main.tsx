@@ -1,11 +1,13 @@
-import { getProjects } from '@/actions/server/sanity'
+import { ProjectItem } from '@/features/menu-sections/types'
 import Image from 'next/image'
 import { urlForImage } from '../../../sanity/lib/image'
 import { Icons } from '../ui/icons'
 
-export const LobbyMain = async () => {
-  const projects = await getProjects()
+interface LobbyMainProps {
+  projects: ProjectItem[]
+}
 
+export const LobbyMain = async ({ projects }: LobbyMainProps) => {
   return (
     <main className="z-[60] pt-24 text-neutral-900 lg:w-1/2 lg:py-24">
       <section id="about" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
@@ -19,7 +21,7 @@ export const LobbyMain = async () => {
           <span className="font-bold"> programming </span>
           and
           <span className="font-bold"> game development</span>, but little did I know I was going to be pulled into the
-          <span className="font-bold"> web development</span>.
+          <span className="font-bold"> web development</span> side.
         </p>
         <p className="mb-4">
           My main focus these days is building accessible user-centered interfaces. I most enjoy building software in
@@ -33,7 +35,7 @@ export const LobbyMain = async () => {
       </section>
 
       <section id="projects" className="">
-        <div className="top-0 z-20 -mx-6 mb-4 w-screen  px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+        <div className="top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           <h2 className="font-bold uppercase tracking-widest text-nier-light-900 lg:sr-only">PROJECTS</h2>
         </div>
         <ul>
