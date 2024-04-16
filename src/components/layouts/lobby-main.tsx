@@ -50,7 +50,7 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
             target="_blank"
             rel="noreferrer noopener"
             aria-label="View Full Résumé (opens in a new tab)"
-            className="group/link inline-flex items-baseline text-base font-medium leading-tight text-nier-light-900 hover:text-nier-light-900/70 focus-visible:text-nier-light-900/70"
+            className="group/link inline-flex items-baseline text-base font-medium leading-tight text-nier-light-900 hover:text-red-600 focus-visible:text-red-600"
           >
             <span>
               View Full{' '}
