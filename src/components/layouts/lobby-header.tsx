@@ -24,7 +24,9 @@ export const LobbyHeader = ({ siteConfig }: LobbyHeaderProps) => {
             <CardHeading className="text-2xl tracking-tight sm:text-3xl md:text-3xl">{siteConfig.author}</CardHeading>
           </CardHeader>
           <CardContent>
-            <CardDescription className="my-0 mb-2 font-medium">{siteConfig.position}</CardDescription>
+            <CardDescription as="h2" className="my-0 mb-2 font-medium">
+              {siteConfig.position}
+            </CardDescription>
             <CardSeparator />
             <CardDescription className="max-w-xs leading-normal">{siteConfig.description}</CardDescription>
           </CardContent>

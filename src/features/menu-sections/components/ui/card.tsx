@@ -24,11 +24,12 @@ const CardHeader = ({ className, children }: HTMLAttributes<HTMLDivElement>) => 
 const CardHeading = ({
   className,
   children,
-}: HTMLAttributes<HTMLHeadingElement> | { children: string; className?: string }) => {
+  as: Shell = 'h1',
+}: HTMLAttributes<HTMLHeadingElement> & { children: string; className?: string; as?: React.ElementType }) => {
   return (
-    <p className={cn('text-nier-light-100 transition-all md:text-xl', className)}>
+    <Shell className={cn('text-nier-light-100 transition-all md:text-xl', className)}>
       {typeof children === 'string' ? <NierLoadingText>{children}</NierLoadingText> : children}
-    </p>
+    </Shell>
   )
 }
 
@@ -63,19 +64,20 @@ const CardSeparator = ({ className }: HTMLAttributes<HTMLDivElement>) => {
   return <div className={cn(' h-[1px] bg-nier-light-800 opacity-70', className)} />
 }
 
-const CardDescription = ({ className, children }: HTMLAttributes<HTMLHeadingElement> & { children: string }) => {
+const CardDescription = ({
+  className,
+  children,
+  as: Shell = 'p',
+}: HTMLAttributes<HTMLHeadingElement> & { children: string; as?: React.ElementType }) => {
   return (
-    <p
+    <Shell
       className={cn(
         'relative my-2 line-clamp-2 font-sans font-normal text-nier-light-900 md:text-lg lg:text-xl',
         className,
       )}
     >
-      <span className="opacity-0">{children}</span>
-      <span className="absolute left-0 top-0">
-        <NierLoadingText>{children}</NierLoadingText>
-      </span>
-    </p>
+      <NierLoadingText>{children}</NierLoadingText>
+    </Shell>
   )
 }
 

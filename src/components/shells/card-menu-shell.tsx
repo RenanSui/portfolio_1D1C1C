@@ -18,7 +18,7 @@ export const CardMenuShell = ({ nav }: CardMenuShellProps) => {
       // onMouseOver={(e) => activateAndClick(e.currentTarget, false)}
       onClick={(e) => activateAndClick(e.currentTarget, false)}
     >
-      <CardMenuHeading>{nav.title.toUpperCase()}</CardMenuHeading>
+      <CardMenuHeading as="span">{nav.title.toUpperCase()}</CardMenuHeading>
     </CardMenuLink>
   )
 }

@@ -12,7 +12,8 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
     <main className="z-[60] pt-24 text-neutral-900 lg:w-1/2 lg:py-24">
       <section id="about" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
         <div className="relative top-0 z-[60] -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12  lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
-          <h2 className="font-bold uppercase tracking-widest text-nier-light-900 ">ABOUT</h2>
+          <h2 className="sr-only">About</h2>
+          <p className="font-bold uppercase tracking-widest text-nier-light-900 ">ABOUT</p>
         </div>
         <p className="mb-4">
           Back in 2010, I decided to try my hand at building private servers for my favorite games with my friends and
@@ -41,7 +42,8 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
 
       <section id="experience" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
         <div className="relative top-0 z-[60] -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12  lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
-          <h2 className="font-bold uppercase tracking-widest text-nier-light-900 ">EXPERIENCE</h2>
+          <h2 className="sr-only">Experience</h2>
+          <p className="font-bold uppercase tracking-widest text-nier-light-900">EXPERIENCE</p>
         </div>
         {/* <div className="mt-12"> */}
         <div className="">
@@ -65,7 +67,8 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
 
       <section id="projects" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
         <div className="relative top-0 z-[60] -mx-6 mb-8 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
-          <h2 className="font-bold uppercase tracking-widest text-nier-light-900 ">PROJECTS</h2>
+          <h2 className="sr-only">Projects</h2>
+          <p className="font-bold uppercase tracking-widest text-nier-light-900 ">PROJECTS</p>
         </div>
         <ul className="group/list">
           {projects.map((project) => {
