@@ -46,14 +46,10 @@ export const LobbyHeader = ({ siteConfig }: LobbyHeaderProps) => {
           const Icon = social.icon ? Icons[social.icon] : Icons.externalLink
 
           return (
-            <li className="mr-2 shrink-0 text-xs" key={`social-${social.title}`}>
-              <a
-                className="block rounded p-1 text-nier-light-900 transition-all duration-100 hover:bg-nier-light-900/20"
-                href={social.href}
-                target="_blank"
-              >
+            <li className="group mr-2 shrink-0 text-xs" key={`social-${social.title}`}>
+              <a className="block rounded p-1 transition-all duration-100" href={social.href} target="_blank">
                 <span className="sr-only">{social.title}</span>
-                <Icon className="pointer-events-none h-7 w-7" aria-hidden="true" />
+                <Icon className="pointer-events-none h-7 w-7 fill-nier-light-800 text-nier-light-800 transition-colors duration-150 group-hover:fill-nier-light-900 group-hover:text-nier-light-900" />
               </a>
             </li>
           )
