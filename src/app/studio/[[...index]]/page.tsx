@@ -9,9 +9,18 @@
  * https://github.com/sanity-io/next-sanity
  */
 
+import { revalidateItems } from '@/actions/server/sanity'
 import { NextStudio } from 'next-sanity/studio'
 import config from '../../../../sanity.config'
 
 export default function StudioPage() {
-  return <NextStudio config={config} />
+  return (
+    <>
+      <button className="m-1 rounded bg-white p-1" onClick={revalidateItems}>
+        Revalidate Items
+      </button>
+
+      <NextStudio config={config} />
+    </>
+  )
 }

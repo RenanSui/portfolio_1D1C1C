@@ -1,10 +1,13 @@
 'use server'
 
 import { ProjectItem } from '@/features/menu-sections/types'
+import { unstable_cache as cache, revalidateTag } from 'next/cache'
 import { client } from '../../../sanity/lib/client'
 
 export async function getProjects(): Promise<ProjectItem[]> {
-  const query = `
+  return await cache(
+    async () => {
+      const query = `
     *[_type == 'projects'] | order(_createdAt asc) {
       "id": _id,
       title,
@@ -13,8 +16,18 @@ export async function getProjects(): Promise<ProjectItem[]> {
       description,
       liveDemoLink,
       githubLink
-    }
-  `
+    }`
 
-  return await client.fetch<ProjectItem[]>(query)
+      return await client.fetch<ProjectItem[]>(query)
+    },
+    ['projects'],
+    {
+      revalidate: false,
+      tags: ['projects'],
+    },
+  )()
+}
+
+export async function revalidateItems() {
+  revalidateTag('projects')
 }
