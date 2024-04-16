@@ -106,9 +106,19 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
         </ul>
       </section>
 
-      <footer className="relative z-[70] max-w-md pb-16 text-sm text-nier-light-900/70 sm:pb-0">
+      <footer className="relative z-[70] max-w-md pb-16 text-sm text-nier-light-900/80 sm:pb-0">
         <p>
-          Coded in{' '}
+          Designed in{' '}
+          <a
+            href="https://www.figma.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-medium text-nier-light-900 transition-colors duration-150 hover:text-red-600 focus-visible:text-red-600"
+            aria-label="Figma (opens in a new tab)"
+          >
+            Figma{' '}
+          </a>
+          and coded in{' '}
           <a
             href="https://code.visualstudio.com/"
             target="_blank"
@@ -147,6 +157,16 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
             aria-label="Vercel (opens in a new tab)"
           >
             Vercel
+          </a>
+          . Content provided by{' '}
+          <a
+            href="https://www.sanity.io"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="font-medium text-nier-light-900 transition-colors duration-150 hover:text-red-600 focus-visible:text-red-600"
+            aria-label="Sanity CMS (opens in a new tab)"
+          >
+            Sanity CMS
           </a>
           .
         </p>
