@@ -63,8 +63,8 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
         </div>
       </section>
 
-      <section id="projects" className="">
-        <div className="relative top-0 z-[60] -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12  lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+      <section id="projects" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+        <div className="relative top-0 z-[60] -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
           <h2 className="font-bold uppercase tracking-widest text-nier-light-900 ">PROJECTS</h2>
         </div>
         <ul className="group/list">
