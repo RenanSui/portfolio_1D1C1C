@@ -28,7 +28,12 @@ export const LobbyHeader = ({ siteConfig }: LobbyHeaderProps) => {
               {siteConfig.position}
             </CardDescription>
             <CardSeparator />
-            <CardDescription className="max-w-xs leading-normal">{siteConfig.description}</CardDescription>
+            <div className="relative">
+              <span className="max-w-xs py-2 opacity-0 md:text-lg lg:text-xl">{siteConfig.description}</span>
+              <CardDescription className="absolute left-0 top-0 max-w-xs leading-normal">
+                {siteConfig.description}
+              </CardDescription>
+            </div>
           </CardContent>
         </Card>
 
