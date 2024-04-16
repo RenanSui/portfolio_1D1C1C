@@ -39,6 +39,6 @@ export const StarsSmall = ({ index, size: screenSize }: StarsSmallProps) => {
         repeatDelay: Math.floor(Math.random() * 30),
         duration: AnimationDuration <= 3 ? 3 : AnimationDuration,
       }}
-    />
+    ></motion.div>
   )
 }

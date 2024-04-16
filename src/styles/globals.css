@@ -40,3 +40,23 @@ body::-webkit-scrollbar,
       rgba(78, 75, 66, 0.4)),
     radial-gradient(transparent 50%, rgba(78, 75, 66, 0.4));
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #DAD4BB;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #CD664D;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ce4725;
+}

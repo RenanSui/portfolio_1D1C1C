@@ -1,3 +1,5 @@
+'use client'
+
 import { NierLoadingText } from '@/features/nier'
 import { useLocalStorageBoolean } from '@/hooks/use-local-storage-state'
 import { cn } from '@/lib/utils'
@@ -20,21 +22,21 @@ export const TextGlitched = ({ children, index, className }: LoadinTextProps) =>
     )
 
   return (
-    <div
+    <span
       className={cn(
-        'pointer-events-none relative select-none text-transparent [text-shadow:_0.03em_0.03em_0.05em_#91433B,_-0.03em_-0.03em_0.05em_#314E45]',
+        'relative text-transparent [text-shadow:_0.03em_0.03em_0.05em_#91433B50,_-0.03em_-0.03em_0.05em_#314E4550]',
       )}
     >
       <GlitchTop className={className}>
         <NierLoadingText index={index}>{children}</NierLoadingText>
       </GlitchTop>
-      <p className="inline-block">
+      <span className="inline-block">
         <NierLoadingText index={index}>{children}</NierLoadingText>
-      </p>
+      </span>
       <GlitchBottom className={className}>
         <NierLoadingText index={index}>{children}</NierLoadingText>
       </GlitchBottom>
-    </div>
+    </span>
   )
 }
 

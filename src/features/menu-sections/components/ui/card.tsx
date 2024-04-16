@@ -21,10 +21,13 @@ const CardHeader = ({ className, children }: HTMLAttributes<HTMLDivElement>) => 
   )
 }
 
-const CardHeading = ({ className, children }: HTMLAttributes<HTMLHeadingElement> & { children: string }) => {
+const CardHeading = ({
+  className,
+  children,
+}: HTMLAttributes<HTMLHeadingElement> | { children: string; className?: string }) => {
   return (
-    <p className={cn('text-nier-light-100 md:text-xl', className)}>
-      <NierLoadingText>{children}</NierLoadingText>
+    <p className={cn('text-nier-light-100 transition-all md:text-xl', className)}>
+      {typeof children === 'string' ? <NierLoadingText>{children}</NierLoadingText> : children}
     </p>
   )
 }

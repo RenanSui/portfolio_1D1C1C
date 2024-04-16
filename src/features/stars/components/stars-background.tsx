@@ -1,16 +1,18 @@
+'use client'
+
 import { AnimatedShell } from '@/components/shells/animated-shell'
 import { arrayMaker, getCurrentDimension } from '@/lib/utils'
-import { memo, useEffect, useState } from 'react'
+import { HTMLAttributes, memo, useEffect, useState } from 'react'
 import { StarsBig } from './stars-big'
 import { StarsMedium } from './stars-medium'
 import { StarsSmall } from './stars-small'
 
-const Stars = () => {
+const Stars = (props: HTMLAttributes<HTMLDivElement>) => {
   const [screenSize, setScreenSize] = useState(getCurrentDimension())
 
-  const small = arrayMaker(Math.floor(screenSize.width / 64))
-  const medium = arrayMaker(Math.floor(screenSize.width / 38))
-  const big = arrayMaker(Math.floor(screenSize.width / 64))
+  const small = arrayMaker(Math.floor(screenSize.width / 32))
+  const medium = arrayMaker(Math.floor(screenSize.width / 19))
+  const big = arrayMaker(Math.floor(screenSize.width / 32))
 
   const Stars = {
     Small: small.map((_, index) => <StarsSmall key={`A${index}`} index={index} size={screenSize} />),
@@ -27,7 +29,7 @@ const Stars = () => {
 
   return (
     <AnimatedShell exit={{ opacity: 0, transition: { duration: 2 } }}>
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 top-0 z-[10000] h-full w-full">
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 top-0 z-[10000] h-full w-full" {...props}>
         <div className="fixed bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden">
           {Stars.Small}
           {Stars.Medium}
