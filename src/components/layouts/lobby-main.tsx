@@ -39,6 +39,30 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
         </p>
       </section>
 
+      <section id="experience" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+        <div className="top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+          <h2 className="font-bold uppercase tracking-widest text-nier-light-900 lg:sr-only">EXPERIENCE</h2>
+        </div>
+        {/* <div className="mt-12"> */}
+        <div className="">
+          <a
+            href="/resume"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="View Full Résumé (opens in a new tab)"
+            className="group/link inline-flex items-baseline text-base font-medium leading-tight text-nier-light-900 hover:text-nier-light-900/70 focus-visible:text-nier-light-900/70"
+          >
+            <span>
+              View Full{' '}
+              <span className="inline-block">
+                Résumé{' '}
+                <Icons.externalLink className="pointer-events-none ml-1 inline-block h-4 w-4 shrink-0 translate-y-px transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none" />
+              </span>
+            </span>
+          </a>
+        </div>
+      </section>
+
       <section id="projects" className="">
         <div className="top-0 z-20 -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
           <h2 className="font-bold uppercase tracking-widest text-nier-light-900 lg:sr-only">PROJECTS</h2>
@@ -48,13 +72,14 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
             return (
               <li key={`project-${project.id}`} className="mb-12">
                 <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-                  <div className="absolute -inset-x-4 -inset-y-4 z-0 rounded bg-nier-light-800/20 transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:bg-transparent lg:group-hover:bg-nier-light-800/30 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
+                  <div className="absolute -inset-x-4 -inset-y-4 z-0 rounded bg-nier-light-800/15 transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:bg-transparent lg:group-hover:bg-nier-light-800/30 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
                   <div className="z-10 sm:order-2 sm:col-span-6">
                     <h3>
                       <a
                         href={project.liveDemoLink}
                         target="_blank"
-                        className="group/link inline-flex items-baseline text-base font-medium leading-tight text-nier-light-900 hover:text-white focus-visible:text-white"
+                        rel="noreferrer noopener"
+                        className="group/link inline-flex items-baseline text-base font-medium leading-tight text-nier-light-900 hover:text-nier-light-900 focus-visible:text-nier-light-900"
                       >
                         <span className="clickable absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block" />
                         <span>{project.title}</span>

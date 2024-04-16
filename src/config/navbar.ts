@@ -6,13 +6,13 @@ export const sidebarNav: NavItem[] = [
     title: 'about',
     href: 'about',
   },
-  // {
-  //   id: 1,
-  //   title: 'experience',
-  //   href: 'experience',
-  // },
   {
     id: 1,
+    title: 'experience',
+    href: 'experience',
+  },
+  {
+    id: 2,
     title: 'projects',
     href: 'projects',
   },
