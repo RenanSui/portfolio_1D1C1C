@@ -17,7 +17,12 @@ export default async function IndexPage() {
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-16 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
           <LobbyHeader siteConfig={siteConfig} />
-          <LobbyMain projects={projects}></LobbyMain>
+          <AnimatedShell
+            className="z-[60] pt-24 text-neutral-900 lg:w-1/2 lg:py-24"
+            animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}
+          >
+            <LobbyMain projects={projects}></LobbyMain>
+          </AnimatedShell>
         </div>
       </div>
     </AnimatedShell>
