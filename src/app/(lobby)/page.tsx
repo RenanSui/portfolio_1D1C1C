@@ -1,6 +1,7 @@
 import { getProjects } from '@/actions/server/sanity'
 import { LobbyHeader } from '@/components/layouts/lobby-header'
 import { LobbyMain } from '@/components/layouts/lobby-main'
+import { AnimatedShell } from '@/components/shells/animated-shell'
 import { siteConfig } from '@/config/site'
 import { NierVignette } from '@/features/nier'
 
@@ -8,7 +9,7 @@ export default async function IndexPage() {
   const projects = await getProjects()
 
   return (
-    <div className="">
+    <AnimatedShell animate={{ opacity: 1, transition: { delay: 0, duration: 1 } }}>
       <div className="pointer-events-none fixed left-0 top-0 h-full w-full bg-[url(/assets/wallpapers/light-theme-1440.png)] bg-cover" />
 
       <NierVignette variant="dark" className="fixed z-10" />
@@ -19,6 +20,6 @@ export default async function IndexPage() {
           <LobbyMain projects={projects}></LobbyMain>
         </div>
       </div>
-    </div>
+    </AnimatedShell>
   )
 }
