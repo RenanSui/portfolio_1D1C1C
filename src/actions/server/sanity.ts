@@ -1,7 +1,7 @@
 'use server'
 
 import { Project } from '@/types'
-import { unstable_cache as cache, revalidatePath } from 'next/cache'
+import { unstable_cache as cache, revalidateTag } from 'next/cache'
 import { client } from '../../../sanity/lib/client'
 
 export async function getProjects() {
@@ -30,5 +30,5 @@ export async function getProjects() {
 }
 
 export async function revalidateItems() {
-  revalidatePath('/')
+  revalidateTag('projects')
 }
