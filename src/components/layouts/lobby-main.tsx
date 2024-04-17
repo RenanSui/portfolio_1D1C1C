@@ -2,6 +2,7 @@ import { ProjectItem } from '@/features/menu-sections/types'
 import Image from 'next/image'
 import { urlForImage } from '../../../sanity/lib/image'
 import { AnimatedShell } from '../shells/animated-shell'
+import { Section } from '../shells/section'
 import { Icons } from '../ui/icons'
 
 interface LobbyMainProps {
@@ -12,7 +13,7 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
   return (
     <main className="">
       <AnimatedShell animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}>
-        <section id="about" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+        <Section id="about" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
           <div className="relative top-0 z-[60] -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12  lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
             <h2 className="sr-only">About</h2>
             <p className="font-bold uppercase tracking-widest text-nier-light-900">ABOUT</p>
@@ -43,11 +44,11 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
               I&apos;m usually reading economic books or helping my uncles at their car workshop.
             </p>
           </AnimatedShell>
-        </section>
+        </Section>
       </AnimatedShell>
 
       <AnimatedShell animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}>
-        <section
+        <Section
           id="experience"
           className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24"
         >
@@ -72,11 +73,11 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
               </span>
             </a>
           </AnimatedShell>
-        </section>
+        </Section>
       </AnimatedShell>
 
       <AnimatedShell animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}>
-        <section id="projects" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+        <Section id="projects" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
           <div className="relative top-0 z-[60] -mx-6 mb-8 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
             <h2 className="sr-only">Projects</h2>
             <p className="font-bold uppercase tracking-widest text-nier-light-900 ">PROJECTS</p>
@@ -134,7 +135,7 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
               )
             })}
           </ul>
-        </section>
+        </Section>
       </AnimatedShell>
 
       <AnimatedShell animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}>

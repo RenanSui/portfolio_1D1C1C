@@ -25,7 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className={cn('bg-black', RodinPro.className)} data-menu="0">
+      <body className={cn('bg-black', RodinPro.className)} data-menu="0" data-nav="about">
         <JotaiProvider>{children}</JotaiProvider>
         <Toaster position="top-center" expand={false} />
         <NierLattice />

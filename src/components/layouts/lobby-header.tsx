@@ -6,7 +6,6 @@ import {
   CardHeading,
   CardSeparator,
 } from '@/features/menu-sections/components/ui/card'
-import { CardMenu } from '@/features/menu-sections/components/ui/card-menu'
 import { SiteConfig } from '@/types'
 import { CardMenuShell } from '../shells/card-menu-shell'
 import { Icons } from '../ui/icons'
@@ -38,11 +37,7 @@ export const LobbyHeader = ({ siteConfig }: LobbyHeaderProps) => {
         </Card>
 
         <nav className="hidden lg:block">
-          <CardMenu className="mt-12 py-2 text-nier-light-900">
-            {siteConfig.navbarConfig.sidebarNav.map((nav) => (
-              <CardMenuShell key={`project-${nav.id}`} nav={nav}></CardMenuShell>
-            ))}
-          </CardMenu>
+          <CardMenuShell sidebarNav={siteConfig.navbarConfig.sidebarNav} />
         </nav>
       </div>
 
