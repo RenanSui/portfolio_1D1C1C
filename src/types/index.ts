@@ -1,4 +1,5 @@
 import { Icons } from '@/components/ui/icons'
+import { siteConfig } from '@/config/site'
 
 export type ScreenStates = 'boot-screen' | 'loading-screen' | 'menu-screen' | 'devices'
 
@@ -23,15 +24,4 @@ export type NavbarConfig = {
   socials: Socials[]
 }
 
-export type SiteConfig = {
-  name: string
-  author: string
-  description: string
-  position: string
-  links: {
-    github: string
-    githubAccount: string
-  }
-  navbarConfig: NavbarConfig
-  locales: string[]
-}
+export type SiteConfig = ReturnType<typeof siteConfig>
