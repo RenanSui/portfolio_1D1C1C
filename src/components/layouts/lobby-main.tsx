@@ -1,5 +1,4 @@
-import { ProjectItem } from '@/features/menu-sections/types'
-import { SiteConfig } from '@/types'
+import { Project, SiteConfig } from '@/types'
 import Image from 'next/image'
 import { urlForImage } from '../../../sanity/lib/image'
 import { AnimatedShell } from '../shells/animated-shell'
@@ -11,7 +10,7 @@ function Capitalize(string: string) {
   return string[0]?.toUpperCase() + string.slice(1).toLowerCase()
 }
 
-type LobbyMainProps = { projects: ProjectItem[]; siteConfig: SiteConfig }
+type LobbyMainProps = { projects: Project[]; siteConfig: SiteConfig }
 
 export const LobbyMain = async ({ projects, siteConfig }: LobbyMainProps) => {
   return (

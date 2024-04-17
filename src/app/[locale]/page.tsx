@@ -1,9 +1,9 @@
 import { getProjects } from '@/actions/server/sanity'
 import { LobbyHeader } from '@/components/layouts/lobby-header'
 import { LobbyMain } from '@/components/layouts/lobby-main'
+import { NierVignette } from '@/components/nier/nier-vignette'
 import { AnimatedShell } from '@/components/shells/animated-shell'
 import { locales, siteConfig } from '@/config/site'
-import { NierVignette } from '@/features/nier'
 import { getTranslations, unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
 
 export default async function IndexPage({ params: { locale } }: { params: { locale: string } }) {

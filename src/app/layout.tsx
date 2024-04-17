@@ -1,11 +1,9 @@
-import { JotaiProvider } from '@/components/providers'
+import { NierLattice } from '@/components/nier/nier-lattice'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
-import { NierLattice } from '@/features/nier'
 import { RodinPro } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
 import { ReactNode } from 'react'
-import { Toaster } from 'sonner'
 import '../styles/globals.css'
 
 export const metadata = {
@@ -31,8 +29,7 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
   return (
     <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
       <body className={cn('bg-black', RodinPro.className)} data-menu="0" data-nav="about">
-        <JotaiProvider>{children}</JotaiProvider>
-        <Toaster position="top-center" expand={false} />
+        {children}
         <NierLattice />
         <TailwindIndicator />
       </body>

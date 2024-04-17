@@ -1,9 +1,9 @@
 'use client'
 
-import { CardMenu, CardMenuHeading, CardMenuLink } from '@/features/menu-sections/components/ui/card-menu'
 import { activateAndClick } from '@/lib/utils'
 import { NavItem } from '@/types'
 import { HTMLAttributes, useEffect, useState } from 'react'
+import { CardMenu, CardMenuHeading, CardMenuLink } from '../ui/card-menu'
 
 type CardMenuShellProps = HTMLAttributes<HTMLDivElement> & {
   sidebarNav: NavItem[]

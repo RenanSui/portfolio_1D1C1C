@@ -1,8 +1,7 @@
 'use client'
 
-import { useLocalStorageBoolean } from '@/hooks/use-local-storage-state'
+import { useTypingText } from '@/hooks/use-typing-text'
 import { useEffect, useState } from 'react'
-import { useTypingText } from '../hooks/use-typing-text'
 
 interface LoadingTextProps {
   children: string
@@ -10,8 +9,7 @@ interface LoadingTextProps {
 }
 
 export const NierLoadingText = ({ children, index = 0 }: LoadingTextProps) => {
-  const [isChecked] = useLocalStorageBoolean('textAnimation', true)
-  const [isShowing, setIsShowing] = useState(false)
+  const [, setIsShowing] = useState(false)
   const { word, start } = useTypingText(children, 30)
 
   const Time = index ? 1250 * (index / 1.5) : 50
@@ -24,8 +22,6 @@ export const NierLoadingText = ({ children, index = 0 }: LoadingTextProps) => {
       clearTimeout(showingTextTimeout)
     }
   })
-
-  if (!isChecked) return <>{isShowing ? children : ''}</>
 
   return (
     <>

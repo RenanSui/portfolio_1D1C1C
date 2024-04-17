@@ -1,10 +1,10 @@
 'use server'
 
-import { ProjectItem } from '@/features/menu-sections/types'
+import { Project } from '@/types'
 import { unstable_cache as cache, revalidatePath } from 'next/cache'
 import { client } from '../../../sanity/lib/client'
 
-export async function getProjects(): Promise<ProjectItem[]> {
+export async function getProjects() {
   return await cache(
     async () => {
       const query = `
@@ -19,7 +19,7 @@ export async function getProjects(): Promise<ProjectItem[]> {
       technologies
     }`
 
-      return await client.fetch<ProjectItem[]>(query)
+      return await client.fetch<Project[]>(query)
     },
     ['projects'],
     {

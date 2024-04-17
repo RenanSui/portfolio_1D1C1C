@@ -1,6 +1,7 @@
-import { NierLoadingText, NierSquare } from '@/features/nier'
 import { cn } from '@/lib/utils'
 import { AnchorHTMLAttributes, HTMLAttributes } from 'react'
+import { NierLoadingText } from '../nier/nier-loading-text'
+import { NierSquare } from '../nier/nier-square'
 
 const Card = ({ className, children }: HTMLAttributes<HTMLDivElement>) => {
   return (

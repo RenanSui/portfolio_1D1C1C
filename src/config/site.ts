@@ -10,11 +10,6 @@ export const socials: Socials[] = [
   { title: 'Whatsapp', href: 'https://api.whatsapp.com/send?phone=+5571985035606&text=Hello', icon: 'whatsapp' },
 ]
 
-export const links = {
-  github: 'https://github.com/RenanSui/portfolio_1d1c1c',
-  githubAccount: 'https://github.com/RenanSui',
-}
-
 export const siteConfig = (intl?: Awaited<ReturnType<typeof getTranslations>>) => {
   const keys = ['about', 'experience', 'projects'] as const
 
@@ -38,7 +33,6 @@ export const siteConfig = (intl?: Awaited<ReturnType<typeof getTranslations>>) =
 
   return {
     website: 'portfolio_1d1c1c',
-    links,
     socials,
     ...dynamicLanguage,
   }

@@ -5,12 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@emailjs/browser':
-    specifier: ^3.11.0
-    version: 3.12.1
-  '@hookform/resolvers':
-    specifier: ^3.3.1
-    version: 3.3.4(react-hook-form@7.49.3)
   '@radix-ui/react-dropdown-menu':
     specifier: ^2.0.6
     version: 2.0.6(@types/react-dom@18.2.18)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)
@@ -56,9 +50,6 @@ dependencies:
   framer-motion:
     specifier: ^10.12.18
     version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
-  jotai:
-    specifier: ^2.6.0
-    version: 2.6.3(@types/react@18.2.48)(react@18.2.0)
   lucide-react:
     specifier: ^0.279.0
     version: 0.279.0(react@18.2.0)
@@ -80,15 +71,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
-  react-hook-form:
-    specifier: ^7.47.0
-    version: 7.49.3(react@18.2.0)
   sanity:
     specifier: '3'
     version: 3.34.0(@types/node@20.11.10)(@types/react@18.2.48)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
-  sonner:
-    specifier: ^1.0.3
-    version: 1.4.0(react-dom@18.2.0)(react@18.2.0)
   styled-components:
     specifier: '6'
     version: 6.1.8(react-dom@18.2.0)(react@18.2.0)
@@ -102,7 +87,7 @@ dependencies:
     specifier: ^5.1.6
     version: 5.3.3
   zod:
-    specifier: ^3.21.4
+    specifier: ^3.22.4
     version: 3.22.4
 
 devDependencies:
@@ -513,11 +498,6 @@ packages:
     dependencies:
       react: 18.2.0
       tslib: 2.6.2
-    dev: false
-
-  /@emailjs/browser@3.12.1:
-    resolution: {integrity: sha512-C5nK07CgSCFx3onsuRt/ZaaMvIi0T3SHHanM7fKozjSvbZu+OjHHP9W608fYpic0OavF7yIlfy4+lRDO33JdbA==}
-    engines: {node: '>=14.0.0'}
     dev: false
 
   /@emotion/is-prop-valid@0.8.8:
@@ -1065,14 +1045,6 @@ packages:
     resolution: {integrity: sha512-zTwEpWOzZ2CiKcB93BLngUX59hQkuZjT2+SAQEscSm52peDW/getsawMcWF1rGRpMCX6D7nSJA3CzJ8gn13N/g==}
     dependencies:
       tslib: 2.6.2
-    dev: false
-
-  /@hookform/resolvers@3.3.4(react-hook-form@7.49.3):
-    resolution: {integrity: sha512-o5cgpGOuJYrd+iMKvkttOclgwRW86EsWJZZRC23prf0uU2i48Htq4PuT73AVb9ionFyZrwYEITuOFGF+BydEtQ==}
-    peerDependencies:
-      react-hook-form: ^7.0.0
-    dependencies:
-      react-hook-form: 7.49.3(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
@@ -5252,22 +5224,6 @@ packages:
     hasBin: true
     dev: false
 
-  /jotai@2.6.3(@types/react@18.2.48)(react@18.2.0):
-    resolution: {integrity: sha512-0htSJ2d6426ZdSEYHncJHXY6Lkgde1Hc2HE/ADIRi9d2L3hQL+jLKY1LkWBMeCNyOSlKH8+1u/Gc33Ox0uq21Q==}
-    engines: {node: '>=12.20.0'}
-    peerDependencies:
-      '@types/react': '>=17.0.0'
-      react: '>=17.0.0'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react:
-        optional: true
-    dependencies:
-      '@types/react': 18.2.48
-      react: 18.2.0
-    dev: false
-
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -6396,15 +6352,6 @@ packages:
       use-sidecar: 1.1.2(@types/react@18.2.48)(react@18.2.0)
     dev: false
 
-  /react-hook-form@7.49.3(react@18.2.0):
-    resolution: {integrity: sha512-foD6r3juidAT1cOZzpmD/gOKt7fRsDhXXZ0y28+Al1CHgX+AY1qIN9VSIIItXRq1dN68QrRwl1ORFlwjBaAqeQ==}
-    engines: {node: '>=18', pnpm: '8'}
-    peerDependencies:
-      react: ^16.8.0 || ^17 || ^18
-    dependencies:
-      react: 18.2.0
-    dev: false
-
   /react-i18next@13.5.0(i18next@23.10.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-CFJ5NDGJ2MUyBohEHxljOq/39NQ972rh1ajnadG9BjTk+UXbHLq4z5DKEbEQBDoIhUmmbuS/fIMJKo6VOax1HA==}
     peerDependencies:
@@ -7044,16 +6991,6 @@ packages:
       immer: 10.0.4
       is-plain-object: 5.0.0
       tiny-warning: 1.0.3
-    dev: false
-
-  /sonner@1.4.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-nvkTsIuOmi9e5Wz5If8ldasJjZNVfwiXYijBi2dbijvTQnQppvMcXTFNxL/NUFWlI2yJ1JX7TREDsg+gYm9WyA==}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /source-map-js@1.0.2:

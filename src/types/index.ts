@@ -1,12 +1,6 @@
 import { Icons } from '@/components/ui/icons'
 import { siteConfig } from '@/config/site'
 
-export type ScreenStates = 'boot-screen' | 'loading-screen' | 'menu-screen' | 'devices'
-
-export type MenuStates = '' | 'press-any' | 'menu' | 'menu-sections'
-
-export type OptionStates = '' | 'about-me' | 'projects' | 'settings' | 'contact' | 'exit-game'
-
 export type NavItem = {
   id: number
   title: string
@@ -19,9 +13,16 @@ export type Socials = {
   icon?: keyof typeof Icons
 }
 
-export type NavbarConfig = {
-  sidebarNav: NavItem[]
-  socials: Socials[]
-}
-
 export type SiteConfig = ReturnType<typeof siteConfig>
+
+export type Project = {
+  id: string
+  title: string
+  slug: string | null
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  titleImage: any
+  description: string
+  liveDemoLink: string
+  githubLink: string
+  technologies?: string[]
+}

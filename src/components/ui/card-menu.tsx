@@ -1,6 +1,7 @@
-import { NierLoadingText, NierSelector } from '@/features/nier'
 import { cn } from '@/lib/utils'
 import { forwardRef } from 'react'
+import { NierLoadingText } from '../nier/nier-loading-text'
+import { NierSelector } from '../nier/nier-selector'
 
 type CardMenuProps = React.HTMLAttributes<HTMLDivElement>
 

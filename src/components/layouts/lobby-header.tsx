@@ -1,14 +1,7 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardHeading,
-  CardSeparator,
-} from '@/features/menu-sections/components/ui/card'
 import { SiteConfig } from '@/types'
 import { AnimatedShell } from '../shells/animated-shell'
 import { CardMenuShell } from '../shells/card-menu-shell'
+import { Card, CardContent, CardDescription, CardHeader, CardHeading, CardSeparator } from '../ui/card'
 import { Icons } from '../ui/icons'
 
 type LobbyHeaderProps = { siteConfig: SiteConfig }

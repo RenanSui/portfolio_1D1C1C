@@ -10,10 +10,6 @@ Bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/can
 - **Framework:** [Next.js](https://nextjs.org)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
 - **Animation:** [Framer Motion](https://www.framer.com/motion/)
-- **Form:** [React Hook Form](https://react-hook-form.com)
-- **State Management:** [Jotai](https://jotai.org)
-- **Toaster:** [Sonner](https://sonner.emilkowal.ski)
-- **Email:** [EmailJS](https://www.emailjs.com)
 
 ## Features
 
