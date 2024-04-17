@@ -11,10 +11,10 @@ interface LobbyMainProps {
 
 export const LobbyMain = async ({ projects }: LobbyMainProps) => {
   return (
-    <main className="">
+    <main className="relative overflow-x-hidden">
       <AnimatedShell animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}>
         <Section id="about" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
-          <div className="relative top-0 z-[60] -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12  lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+          <div className="relative top-0 z-[60] -mx-6 my-5 mb-4 w-screen px-6 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
             <h2 className="sr-only">About</h2>
             <p className="font-bold uppercase tracking-widest text-nier-light-900">ABOUT</p>
           </div>
@@ -90,7 +90,7 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
                   animate={{ opacity: 1, transition: { delay: 1 + index * 0.5, duration: 1 } }}
                 >
                   <li className="mb-12">
-                    <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                    <div className="group relative grid gap-4 p-2 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                       <div className="absolute -inset-x-4 -inset-y-4 z-0 rounded bg-nier-light-800/15 transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:bg-transparent lg:group-hover:bg-nier-light-800/30 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
                       <div className="z-10 sm:order-2 sm:col-span-6">
                         <h3>
