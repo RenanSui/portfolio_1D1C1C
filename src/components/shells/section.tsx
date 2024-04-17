@@ -12,14 +12,14 @@ export const Section = ({ children, as: Shell = 'section', id, ...props }: Shell
     function changeBodySection() {
       const element = document.querySelector(`#${id}`) as HTMLElement
 
-      const sectionOffsetTop = element.offsetTop
-      const sectionHeight = element.clientHeight
-      const windowScrollY = window.scrollY + 97 // margin-bottom-24 + 1 pixel
+      const offsetTop = element.offsetTop
+      const height = element.clientHeight
+      const scrollTop = window.scrollY + 97 // margin-bottom-24 + 1 pixel
 
-      const calc1 = windowScrollY > sectionOffsetTop
-      const calc2 = windowScrollY < sectionOffsetTop + sectionHeight
+      const isScrollGreaterThanOffset = scrollTop > offsetTop
+      const isScrollLessThanOffsetAndHeight = scrollTop < offsetTop + height
 
-      if (calc1 && calc2) {
+      if (isScrollGreaterThanOffset && isScrollLessThanOffsetAndHeight) {
         document.body.setAttribute('data-nav', id ?? '')
       }
     }
