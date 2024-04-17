@@ -5,6 +5,7 @@ import { urlForImage } from '../../../sanity/lib/image'
 import { AnimatedShell } from '../shells/animated-shell'
 import { Section } from '../shells/section'
 import { Icons } from '../ui/icons'
+import { LanguageToggler } from './language-toggler'
 
 function Capitalize(string: string) {
   return string[0]?.toUpperCase() + string.slice(1).toLowerCase()
@@ -212,6 +213,10 @@ export const LobbyMain = async ({ projects, siteConfig }: LobbyMainProps) => {
             </a>
             .
           </p>
+
+          <div className="relative z-[60] mb-auto ml-1 mt-2 flex justify-between gap-4">
+            <LanguageToggler />
+          </div>
         </footer>
       </AnimatedShell>
     </main>
