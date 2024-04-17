@@ -1,6 +1,8 @@
 import { SiteConfig } from '@/types'
 import { navbarConfig } from './navbar'
 
+const locales = ['en', 'pt-br']
+
 const links = {
   github: 'https://github.com/RenanSui/portfolio_1d1c1c',
   githubAccount: 'https://github.com/RenanSui',
@@ -13,4 +15,5 @@ export const siteConfig: SiteConfig = {
   description: 'I build pixel-perfect, engaging, and accessible digital experiences.',
   links,
   navbarConfig,
+  locales,
 }

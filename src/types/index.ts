@@ -33,4 +33,5 @@ export type SiteConfig = {
     githubAccount: string
   }
   navbarConfig: NavbarConfig
+  locales: string[]
 }
