@@ -1,7 +1,5 @@
 import createMiddleware from 'next-intl/middleware'
-import { siteConfig } from './config/site'
-
-const { locales } = siteConfig
+import { locales } from './config/site'
 
 export default createMiddleware({
   // A list of all locales that are supported
