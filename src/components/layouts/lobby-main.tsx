@@ -108,7 +108,7 @@ export const LobbyMain = async ({ projects }: LobbyMainProps) => {
                           </a>
                         </h3>
                         <p className="mt-2 text-sm leading-normal">{project.description}</p>
-                        <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
+                        <ul className="pointer-events-none mt-2 flex flex-wrap" aria-label="Technologies used">
                           {project.technologies?.map((tec, index) => {
                             return (
                               <li className="mr-1.5 mt-2" key={`tec-${index}`}>
