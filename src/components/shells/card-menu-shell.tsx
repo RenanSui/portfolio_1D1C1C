@@ -31,8 +31,8 @@ export const CardMenuShell = ({ sidebarNav }: CardMenuShellProps) => {
       {sidebarNav.map((nav) => (
         <CardMenuLink
           href={`#${nav.href}`}
-          key={`project-${nav.id}`}
-          data-active={nav.title.toLowerCase() === MenuActive ? 'true' : 'false'}
+          key={`nav-${nav.id}`}
+          data-active={nav.href.toLowerCase() === MenuActive.toLowerCase() ? 'true' : 'false'}
           onClick={(e) => activateAndClick(e.currentTarget, false)}
         >
           <CardMenuHeading as="span">{nav.title.toUpperCase()}</CardMenuHeading>
