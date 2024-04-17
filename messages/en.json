@@ -1,5 +1,28 @@
 {
   "Index": {
-    "title": "Hello World!"
+    "author": "Renan Sui",
+    "position": "Web Developer",
+    "description": "I build pixel-perfect, engaging, and accessible digital experiences.",
+    "navItems": {
+      "about": {
+        "id": "0",
+        "title": "about",
+        "href": "about"
+      },
+      "experience": {
+        "id": "1",
+        "title": "experience",
+        "href": "experience"
+      },
+      "projects": {
+        "id": "2",
+        "title": "projects",
+        "href": "projects"
+      }
+    }
+  },
+  "Metadata": {
+    "title": "Renan Sui",
+    "description": "Renan Sui's Personal Portfolio"
   }
 }

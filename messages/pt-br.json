@@ -1,5 +1,28 @@
 {
   "Index": {
-    "title": "Olá Mundo!"
+    "author": "Renan Sui",
+    "position": "Desenvolvedor Web",
+    "description": "Eu construo experiências digitais pixel-perfect, envolventes e acessíveis.",
+    "navItems": {
+      "about": {
+        "id": "0",
+        "title": "sobre",
+        "href": "about"
+      },
+      "experience": {
+        "id": "1",
+        "title": "experiência",
+        "href": "experience"
+      },
+      "projects": {
+        "id": "2",
+        "title": "projetos",
+        "href": "projects"
+      }
+    }
+  },
+  "Metadata": {
+    "title": "Renan Sui",
+    "description": "Portfolio Pessoal do Renan Sui"
   }
 }
