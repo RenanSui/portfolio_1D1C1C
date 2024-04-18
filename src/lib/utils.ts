@@ -34,10 +34,6 @@ export const elementClick = (element: HTMLElement) => {
 export const getFormattedTranslation = async (locale: string) => {
   const intl = await getTranslations({ locale, namespace: 'Index' })
   const keys = ['about', 'experience', 'projects'] as const
-  // const titles = keys.reduce((acc, key) => ({ ...acc, [key]: key }), {})
-  const titles = Object.fromEntries(keys.map((key) => [key, key]))
-
-  console.log({ titles })
 
   return {
     description: intl('description') ?? '',

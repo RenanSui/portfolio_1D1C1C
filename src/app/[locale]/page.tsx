@@ -11,8 +11,14 @@ import { getTranslations, unstable_setRequestLocale as setRequestLocale } from '
 export default async function IndexPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale)
 
-  const projects = await getProjects()
-  const localeConfig = await getFormattedTranslation(locale)
+  /**
+   * To avoid sequential waterfall requests, multiple promises are passed to fetch data parallelly.
+   * These promises are also passed to the `Lobby` component, making them hot promises. This means they can execute without being awaited, further preventing sequential requests.
+   * @see https://www.youtube.com/shorts/A7GGjutZxrs
+   * @see https://nextjs.org/docs/app/building-your-application/data-fetching/patterns#parallel-data-fetching
+   */
+  const projectsPromise = getProjects()
+  const localeConfigPromise = getFormattedTranslation(locale)
 
   return (
     <AnimatedShell animate={{ opacity: 1, transition: { delay: 0, duration: 1 } }}>
@@ -22,12 +28,12 @@ export default async function IndexPage({ params: { locale } }: { params: { loca
 
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-16 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
-          <LobbyHeader localeConfig={localeConfig} />
+          <LobbyHeader localeConfigPromise={localeConfigPromise} />
           <AnimatedShell
             className="z-[60] pt-24 text-neutral-900 lg:w-1/2 lg:py-24"
             animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}
           >
-            <LobbyMain projects={projects} localeConfig={localeConfig}></LobbyMain>
+            <LobbyMain projectsPromise={projectsPromise} localeConfigPromise={localeConfigPromise}></LobbyMain>
           </AnimatedShell>
         </div>
       </div>

@@ -1,4 +1,5 @@
-import { Project, localeConfig } from '@/types'
+import { getProjects } from '@/actions/server/sanity'
+import { getFormattedTranslation } from '@/lib/utils'
 import Image from 'next/image'
 import { urlForImage } from '../../../sanity/lib/image'
 import { AnimatedShell } from '../shells/animated-shell'
@@ -10,9 +11,15 @@ function Capitalize(string: string) {
   return string[0]?.toUpperCase() + string.slice(1).toLowerCase()
 }
 
-type LobbyMainProps = { projects: Project[]; localeConfig: localeConfig }
+type LobbyMainProps = {
+  projectsPromise: ReturnType<typeof getProjects>
+  localeConfigPromise: ReturnType<typeof getFormattedTranslation>
+}
 
-export const LobbyMain = async ({ projects, localeConfig }: LobbyMainProps) => {
+export const LobbyMain = async ({ projectsPromise, localeConfigPromise }: LobbyMainProps) => {
+  const projects = await projectsPromise
+  const localeConfig = await localeConfigPromise
+
   const { titles } = localeConfig.navbarConfig
 
   return (

@@ -1,13 +1,15 @@
-import { localeConfig } from '@/types'
+import { siteConfig } from '@/config/site'
+import { getFormattedTranslation } from '@/lib/utils'
 import { AnimatedShell } from '../shells/animated-shell'
 import { CardMenuShell } from '../shells/card-menu-shell'
 import { Card, CardContent, CardDescription, CardHeader, CardHeading, CardSeparator } from '../ui/card'
 import { Icons } from '../ui/icons'
-import { siteConfig } from '@/config/site'
 
-type LobbyHeaderProps = { localeConfig: localeConfig }
+type LobbyHeaderProps = { localeConfigPromise: ReturnType<typeof getFormattedTranslation> }
 
-export const LobbyHeader = ({ localeConfig }: LobbyHeaderProps) => {
+export const LobbyHeader = async ({ localeConfigPromise }: LobbyHeaderProps) => {
+  const localeConfig = await localeConfigPromise
+
   return (
     <header className="sticky z-[60] lg:bottom-0 lg:top-0 lg:flex lg:h-screen lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
       <div className="lg:max-w-[400px]">
