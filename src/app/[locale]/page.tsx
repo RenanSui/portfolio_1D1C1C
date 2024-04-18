@@ -3,15 +3,16 @@ import { LobbyHeader } from '@/components/layouts/lobby-header'
 import { LobbyMain } from '@/components/layouts/lobby-main'
 import { NierVignette } from '@/components/nier/nier-vignette'
 import { AnimatedShell } from '@/components/shells/animated-shell'
-import { locales, siteConfig } from '@/config/site'
+import { locales, siteMetadata } from '@/config/site'
+import { getFormattedTranslation } from '@/lib/utils'
+import { Metadata } from 'next'
 import { getTranslations, unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
 
 export default async function IndexPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale)
 
-  const intl = await getTranslations({ locale, namespace: 'Index' })
   const projects = await getProjects()
-  const intlSiteConfig = siteConfig(intl)
+  const localeConfig = await getFormattedTranslation(locale)
 
   return (
     <AnimatedShell animate={{ opacity: 1, transition: { delay: 0, duration: 1 } }}>
@@ -21,12 +22,12 @@ export default async function IndexPage({ params: { locale } }: { params: { loca
 
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-16 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div className="lg:flex lg:justify-between lg:gap-4">
-          <LobbyHeader siteConfig={intlSiteConfig} />
+          <LobbyHeader localeConfig={localeConfig} />
           <AnimatedShell
             className="z-[60] pt-24 text-neutral-900 lg:w-1/2 lg:py-24"
             animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}
           >
-            <LobbyMain projects={projects} siteConfig={intlSiteConfig}></LobbyMain>
+            <LobbyMain projects={projects} localeConfig={localeConfig}></LobbyMain>
           </AnimatedShell>
         </div>
       </div>
@@ -42,17 +43,16 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   const intl = await getTranslations({ locale, namespace: 'Metadata' })
 
   return {
-    title: intl('title'),
+    ...siteMetadata,
     description: intl('description'),
-    metadataBase: new URL('https://renansui.vercel.app'),
-    icons: {
-      icon: 'images/favicon.ico',
-      shortcut: 'images/favicon.ico',
-      apple: 'images/apple-touch-icon.png',
-      other: {
-        rel: 'apple-touch-icon',
-        url: 'images/apple-touch-icon.png',
-      },
+    openGraph: {
+      ...siteMetadata.openGraph,
+      description: intl('description'),
+      locale,
     },
-  }
+    twitter: {
+      ...siteMetadata.twitter,
+      description: intl('description'),
+    },
+  } satisfies Metadata
 }

@@ -1,5 +1,5 @@
 import { Icons } from '@/components/ui/icons'
-import { siteConfig } from '@/config/site'
+import { getFormattedTranslation } from '@/lib/utils'
 
 export type NavItem = {
   id: number
@@ -13,7 +13,7 @@ export type Socials = {
   icon?: keyof typeof Icons
 }
 
-export type SiteConfig = ReturnType<typeof siteConfig>
+export type localeConfig = Awaited<ReturnType<typeof getFormattedTranslation>>
 
 export type Project = {
   id: string

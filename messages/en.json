@@ -1,6 +1,5 @@
 {
   "Index": {
-    "author": "Renan Sui",
     "position": "Web Developer",
     "description": "I build pixel-perfect, engaging, and accessible digital experiences.",
     "navItems": {
@@ -22,7 +21,6 @@
     }
   },
   "Metadata": {
-    "title": "Renan Sui",
-    "description": "Renan Sui's Personal Portfolio"
+    "description": "Personal Portfolio Website"
   }
 }

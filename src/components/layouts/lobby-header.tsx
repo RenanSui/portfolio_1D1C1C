@@ -1,40 +1,41 @@
-import { SiteConfig } from '@/types'
+import { localeConfig } from '@/types'
 import { AnimatedShell } from '../shells/animated-shell'
 import { CardMenuShell } from '../shells/card-menu-shell'
 import { Card, CardContent, CardDescription, CardHeader, CardHeading, CardSeparator } from '../ui/card'
 import { Icons } from '../ui/icons'
+import { siteConfig } from '@/config/site'
 
-type LobbyHeaderProps = { siteConfig: SiteConfig }
+type LobbyHeaderProps = { localeConfig: localeConfig }
 
-export const LobbyHeader = ({ siteConfig }: LobbyHeaderProps) => {
+export const LobbyHeader = ({ localeConfig }: LobbyHeaderProps) => {
   return (
     <header className="sticky z-[60] lg:bottom-0 lg:top-0 lg:flex lg:h-screen lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
       <div className="lg:max-w-[400px]">
         <Card className="md:max-w-[1280px]">
           <CardHeader>
-            <CardHeading className="text-2xl tracking-tight sm:text-3xl md:text-3xl">{siteConfig.author}</CardHeading>
+            <CardHeading className="text-2xl tracking-tight sm:text-3xl md:text-3xl">Renan Sui</CardHeading>
           </CardHeader>
           <CardContent>
             <CardDescription as="h2" className="my-0 mb-2 font-medium">
-              {siteConfig.position}
+              {localeConfig.position}
             </CardDescription>
             <CardSeparator />
             <div className="relative">
-              <span className="line-clamp-3 max-w-xs opacity-0 md:text-lg lg:text-xl">{siteConfig.description}</span>
+              <span className="line-clamp-3 max-w-xs opacity-0 md:text-lg lg:text-xl">{localeConfig.description}</span>
               <CardDescription className="absolute left-0 top-0 line-clamp-3 max-w-xs leading-normal">
-                {siteConfig.description}
+                {localeConfig.description}
               </CardDescription>
             </div>
           </CardContent>
         </Card>
 
         <nav className="hidden lg:block">
-          <CardMenuShell sidebarNav={siteConfig.navbarConfig.navItems} />
+          <CardMenuShell sidebarNav={localeConfig.navbarConfig.navItems} />
         </nav>
       </div>
 
       <ul className="relative z-[60] ml-1 mt-8 flex items-center" aria-label="Social Media">
-        {siteConfig.socials.map((social, index) => {
+        {siteConfig.mainNav.socials.map((social, index) => {
           const Icon = social.icon ? Icons[social.icon] : Icons.externalLink
 
           return (

@@ -1,4 +1,4 @@
-import { Project, SiteConfig } from '@/types'
+import { Project, localeConfig } from '@/types'
 import Image from 'next/image'
 import { urlForImage } from '../../../sanity/lib/image'
 import { AnimatedShell } from '../shells/animated-shell'
@@ -10,18 +10,18 @@ function Capitalize(string: string) {
   return string[0]?.toUpperCase() + string.slice(1).toLowerCase()
 }
 
-type LobbyMainProps = { projects: Project[]; siteConfig: SiteConfig }
+type LobbyMainProps = { projects: Project[]; localeConfig: localeConfig }
 
-export const LobbyMain = async ({ projects, siteConfig }: LobbyMainProps) => {
+export const LobbyMain = async ({ projects, localeConfig }: LobbyMainProps) => {
+  const { titles } = localeConfig.navbarConfig
+
   return (
     <main className="relative overflow-x-hidden">
       <AnimatedShell animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}>
         <Section id="about" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
           <div className="relative top-0 z-[60] -mx-6 my-5 mb-4 w-screen px-6 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
-            <h2 className="sr-only">{Capitalize(siteConfig.navbarConfig.navTitles.about)}</h2>
-            <p className="font-bold uppercase tracking-widest text-nier-light-900">
-              {siteConfig.navbarConfig.navTitles.about.toUpperCase()}
-            </p>
+            <h2 className="sr-only">{Capitalize(titles.about)}</h2>
+            <p className="font-bold uppercase tracking-widest text-nier-light-900">{titles.about.toUpperCase()}</p>
           </div>
           <AnimatedShell animate={{ opacity: 1, transition: { delay: 1.5, duration: 1 } }}>
             <p className="mb-4">
@@ -58,10 +58,8 @@ export const LobbyMain = async ({ projects, siteConfig }: LobbyMainProps) => {
           className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24"
         >
           <div className="relative top-0 z-[60] -mx-6 mb-4 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12  lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
-            <h2 className="sr-only">{Capitalize(siteConfig.navbarConfig.navTitles.experience)}</h2>
-            <p className="font-bold uppercase tracking-widest text-nier-light-900">
-              {siteConfig.navbarConfig.navTitles.experience.toUpperCase()}
-            </p>
+            <h2 className="sr-only">{Capitalize(titles.experience)}</h2>
+            <p className="font-bold uppercase tracking-widest text-nier-light-900">{titles.experience.toUpperCase()}</p>
           </div>
           <AnimatedShell animate={{ opacity: 1, transition: { delay: 1.5, duration: 1 } }}>
             <a
@@ -86,10 +84,8 @@ export const LobbyMain = async ({ projects, siteConfig }: LobbyMainProps) => {
       <AnimatedShell animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}>
         <Section id="projects" className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24">
           <div className="relative top-0 z-[60] -mx-6 mb-8 w-screen px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
-            <h2 className="sr-only">{Capitalize(siteConfig.navbarConfig.navTitles.projects)}</h2>
-            <p className="font-bold uppercase tracking-widest text-nier-light-900 ">
-              {siteConfig.navbarConfig.navTitles.projects.toUpperCase()}
-            </p>
+            <h2 className="sr-only">{Capitalize(titles.projects)}</h2>
+            <p className="font-bold uppercase tracking-widest text-nier-light-900 ">{titles.projects.toUpperCase()}</p>
           </div>
           <ul className="group/list">
             {projects.map((project, index) => {

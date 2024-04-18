@@ -1,5 +1,5 @@
 import { Socials } from '@/types'
-import { getTranslations } from 'next-intl/server'
+import { Metadata } from 'next'
 
 export const locales = ['en', 'pt-br']
 
@@ -10,30 +10,43 @@ export const socials: Socials[] = [
   { title: 'Whatsapp', href: 'https://api.whatsapp.com/send?phone=+5571985035606&text=Hello', icon: 'whatsapp' },
 ]
 
-export const siteConfig = (intl?: Awaited<ReturnType<typeof getTranslations>>) => {
-  const keys = ['about', 'experience', 'projects'] as const
+export const siteConfig = {
+  name: 'Portfolio_1d1c1c',
+  url: 'https://renansui.vercel.app',
+  description: 'Personal Portfolio Website',
+  mainNav: {
+    socials: [...socials.map((social) => ({ title: social.title, href: social.href, icon: social.icon }))],
+  },
+}
 
-  const dynamicLanguage = {
-    author: intl?.('author') ?? '',
-    description: intl?.('description') ?? '',
-    position: intl?.('position') ?? '',
-    navbarConfig: {
-      navTitles: {
-        about: intl?.('navItems.about.title') ?? '',
-        experience: intl?.('navItems.experience.title') ?? '',
-        projects: intl?.('navItems.projects.title') ?? '',
-      },
-      navItems: keys.map((key) => ({
-        id: Number(intl?.(`navItems.${key}.id`)) ?? 0,
-        title: intl?.(`navItems.${key}.title`) ?? '',
-        href: intl?.(`navItems.${key}.href`) ?? '',
-      })),
+export const siteMetadata: Metadata = {
+  metadataBase: new URL('https://renansui.vercel.app'),
+  title: siteConfig.name,
+  description: siteConfig.description,
+  keywords: ['nextjs', 'react', 'react server components', 'resume', 'sanity', 'portfolio', 'nier', 'NieR:Automata'],
+  authors: [
+    {
+      name: 'renansui',
+      url: 'https://renansui.vercel.app',
     },
-  }
-
-  return {
-    website: 'portfolio_1d1c1c',
-    socials,
-    ...dynamicLanguage,
-  }
+  ],
+  creator: 'renansui',
+  openGraph: {
+    type: 'website',
+    locale: 'en',
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: '/opengraph-image.png',
+  },
+  twitter: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [`${siteConfig.url}/opengraph-image.png`],
+    creator: '@adsjksui',
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
