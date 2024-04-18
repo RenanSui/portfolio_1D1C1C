@@ -4,7 +4,7 @@ import { RodinPro } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
 import { ReactNode } from 'react'
-import '../styles/globals.css'
+import '../../styles/globals.css'
 
 export const metadata = {
   title: 'Renan Sui',
@@ -21,9 +21,9 @@ export const metadata = {
   },
 }
 
-type RootLayoutProps = { children: ReactNode; params: { locale: string } }
+type LocaleLayoutProps = { children: ReactNode; params: { locale: string } }
 
-export default function RootLayout({ children, params: { locale } }: RootLayoutProps) {
+export default function LocaleLayout({ children, params: { locale } }: LocaleLayoutProps) {
   setRequestLocale(locale)
 
   return (
