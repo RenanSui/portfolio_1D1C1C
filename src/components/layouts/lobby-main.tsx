@@ -97,11 +97,8 @@ export const LobbyMain = async ({ projectsPromise, localeConfigPromise }: LobbyM
           <ul className="group/list">
             {projects.map((project, index) => {
               return (
-                <AnimatedShell
-                  key={`project-${project.id}`}
-                  animate={{ opacity: 1, transition: { delay: 1 + index * 0.5, duration: 1 } }}
-                >
-                  <li className="mb-12">
+                <li className="mb-12" key={`project-${project.id}`}>
+                  <AnimatedShell animate={{ opacity: 1, transition: { delay: 1 + index * 0.5, duration: 1 } }}>
                     <div className="group relative grid gap-4 p-2 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                       <div className="absolute -inset-x-4 -inset-y-4 z-0 rounded bg-nier-light-800/15 transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:bg-transparent lg:group-hover:bg-nier-light-800/30 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
                       <div className="z-10 sm:order-2 sm:col-span-6">
@@ -119,14 +116,23 @@ export const LobbyMain = async ({ projectsPromise, localeConfigPromise }: LobbyM
                             </span>
                           </a>
                         </h3>
-                        <p className="mt-2 text-sm leading-normal">{project.description}</p>
+                        <AnimatedShell animate={{ opacity: 1, transition: { delay: 1 + index * 0.75, duration: 1 } }}>
+                          <p className="mt-2 text-sm leading-normal">{project.description}</p>
+                        </AnimatedShell>
                         <ul className="pointer-events-none mt-2 flex flex-wrap" aria-label="Technologies used">
-                          {project.technologies?.map((tec, index) => {
+                          {project.technologies?.map((tec, index2) => {
                             return (
-                              <li className="mr-1.5 mt-2" key={`tec-${index}`}>
-                                <span className="flex items-center rounded-full bg-nier-light-900/60 px-3 py-1 text-xs font-medium leading-5 text-nier-light-100 opacity-90">
-                                  {tec}
-                                </span>
+                              <li className="mr-1.5 mt-2" key={`tec-${index2}`}>
+                                <AnimatedShell
+                                  animate={{
+                                    opacity: 1,
+                                    transition: { delay: 1 + index * 0.5 + index2 * 0.5, duration: 1 },
+                                  }}
+                                >
+                                  <span className="flex items-center rounded-full bg-nier-light-900/60 px-3 py-1 text-xs font-medium leading-5 text-nier-light-100 opacity-90">
+                                    {tec}
+                                  </span>
+                                </AnimatedShell>
                               </li>
                             )
                           })}
@@ -142,8 +148,8 @@ export const LobbyMain = async ({ projectsPromise, localeConfigPromise }: LobbyM
                         decoding="async"
                       />
                     </div>
-                  </li>
-                </AnimatedShell>
+                  </AnimatedShell>
+                </li>
               )
             })}
           </ul>
