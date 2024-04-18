@@ -38,17 +38,14 @@ export const LobbyHeader = ({ siteConfig }: LobbyHeaderProps) => {
           const Icon = social.icon ? Icons[social.icon] : Icons.externalLink
 
           return (
-            <AnimatedShell
-              key={`icon-${index}`}
-              animate={{ opacity: 1, transition: { delay: 0.5 + index * 0.5, duration: 1 } }}
-            >
-              <li className="group mr-2 shrink-0 text-xs">
+            <li className="group mr-2 shrink-0 text-xs" key={`icon-${index}`}>
+              <AnimatedShell animate={{ opacity: 1, transition: { delay: 0.5 + index * 0.5, duration: 1 } }}>
                 <a className="block rounded p-1 transition-all duration-100" href={social.href} target="_blank">
                   <span className="sr-only">{social.title}</span>
                   <Icon className="pointer-events-none h-7 w-7 fill-nier-light-800 text-nier-light-800 transition-colors duration-150 group-hover:fill-nier-light-900 group-hover:text-nier-light-900" />
                 </a>
-              </li>
-            </AnimatedShell>
+              </AnimatedShell>
+            </li>
           )
         })}
       </ul>
