@@ -5,9 +5,17 @@ export const locales = ['en', 'pt-br']
 
 export const socials: Socials[] = [
   { title: 'GitHub', href: 'https://github.com/RenanSui', icon: 'github' },
-  { title: 'LinkedIn', href: 'https://www.linkedin.com/in/renansui/', icon: 'linkedin' },
+  {
+    title: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/renansui/',
+    icon: 'linkedin',
+  },
   { title: 'Gmail', href: 'mailto: renanddtao@gmail.com', icon: 'gmail' },
-  { title: 'Whatsapp', href: 'https://api.whatsapp.com/send?phone=+5571985035606&text=Hello', icon: 'whatsapp' },
+  {
+    title: 'Whatsapp',
+    href: 'https://api.whatsapp.com/send?phone=+5571985035606&text=Hello',
+    icon: 'whatsapp',
+  },
 ]
 
 export const siteConfig = {
@@ -15,7 +23,13 @@ export const siteConfig = {
   url: 'https://renansui.vercel.app',
   description: 'Personal Portfolio Website',
   mainNav: {
-    socials: [...socials.map((social) => ({ title: social.title, href: social.href, icon: social.icon }))],
+    socials: [
+      ...socials.map((social) => ({
+        title: social.title,
+        href: social.href,
+        icon: social.icon,
+      })),
+    ],
   },
 }
 
@@ -23,7 +37,16 @@ export const siteMetadata: Metadata = {
   metadataBase: new URL('https://renansui.vercel.app'),
   title: siteConfig.name,
   description: siteConfig.description,
-  keywords: ['nextjs', 'react', 'react server components', 'resume', 'sanity', 'portfolio', 'nier', 'NieR:Automata'],
+  keywords: [
+    'nextjs',
+    'react',
+    'react server components',
+    'resume',
+    'sanity',
+    'portfolio',
+    'nier',
+    'NieR:Automata',
+  ],
   authors: [
     {
       name: 'renansui',

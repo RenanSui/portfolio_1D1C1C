@@ -7,7 +7,12 @@ interface ShellProps extends HTMLAttributes<HTMLDivElement> {
   id: string
 }
 
-export const Section = ({ children, as: Shell = 'section', id, ...props }: ShellProps) => {
+export const Section = ({
+  children,
+  as: Shell = 'section',
+  id,
+  ...props
+}: ShellProps) => {
   useEffect(() => {
     function changeBodySection() {
       const element = document.querySelector(`#${id}`) as HTMLElement

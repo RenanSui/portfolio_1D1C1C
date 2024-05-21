@@ -6,9 +6,16 @@ import { AnimatedShell } from '@/components/shells/animated-shell'
 import { locales, siteMetadata } from '@/config/site'
 import { getFormattedTranslation } from '@/lib/utils'
 import { Metadata } from 'next'
-import { getTranslations, unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
+import {
+  getTranslations,
+  unstable_setRequestLocale as setRequestLocale,
+} from 'next-intl/server'
 
-export default async function IndexPage({ params: { locale } }: { params: { locale: string } }) {
+export default async function IndexPage({
+  params: { locale },
+}: {
+  params: { locale: string }
+}) {
   setRequestLocale(locale)
 
   /**
@@ -21,7 +28,9 @@ export default async function IndexPage({ params: { locale } }: { params: { loca
   const localeConfigPromise = getFormattedTranslation(locale)
 
   return (
-    <AnimatedShell animate={{ opacity: 1, transition: { delay: 0, duration: 1 } }}>
+    <AnimatedShell
+      animate={{ opacity: 1, transition: { delay: 0, duration: 1 } }}
+    >
       <div className="pointer-events-none fixed left-0 top-0 h-full w-full bg-[url(/assets/wallpapers/light-theme-1440.png)] bg-cover" />
 
       <NierVignette variant="dark" className="fixed z-10" />
@@ -33,7 +42,10 @@ export default async function IndexPage({ params: { locale } }: { params: { loca
             className="z-[60] pt-24 text-neutral-900 lg:w-1/2 lg:py-24"
             animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}
           >
-            <LobbyMain projectsPromise={projectsPromise} localeConfigPromise={localeConfigPromise}></LobbyMain>
+            <LobbyMain
+              projectsPromise={projectsPromise}
+              localeConfigPromise={localeConfigPromise}
+            ></LobbyMain>
           </AnimatedShell>
         </div>
       </div>
@@ -45,7 +57,11 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string }
+}) {
   const intl = await getTranslations({ locale, namespace: 'Metadata' })
 
   return {

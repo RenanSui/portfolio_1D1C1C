@@ -12,12 +12,19 @@ export const metadata: Metadata = siteMetadata
 
 type LocaleLayoutProps = { children: ReactNode; params: { locale: string } }
 
-export default function LocaleLayout({ children, params: { locale } }: LocaleLayoutProps) {
+export default function LocaleLayout({
+  children,
+  params: { locale },
+}: LocaleLayoutProps) {
   setRequestLocale(locale)
 
   return (
     <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
-      <body className={cn('bg-black', RodinPro.className)} data-menu="0" data-nav="about">
+      <body
+        className={cn('bg-black', RodinPro.className)}
+        data-menu="0"
+        data-nav="about"
+      >
         {children}
         <NierLattice />
         <TailwindIndicator />
