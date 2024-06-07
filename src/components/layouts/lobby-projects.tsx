@@ -20,7 +20,7 @@ export async function LobbyProjects({
     <div
       className="relative animate-fade-in"
       style={{
-        animationDelay: '3s',
+        animationDelay: '1s',
         animationFillMode: 'both',
         animationDuration: '1s',
       }}
@@ -42,7 +42,7 @@ export async function LobbyProjects({
                 <div
                   className="relative animate-fade-in"
                   style={{
-                    animationDelay: `${3 + index * 0.3}s`,
+                    animationDelay: `${1 + index * 0.3}s`,
                     animationFillMode: 'both',
                     animationDuration: '1s',
                   }}

@@ -13,7 +13,7 @@ export async function LobbyExperience({ localeConfig }: LobbyExperienceProps) {
     <div
       className="relative animate-fade-in"
       style={{
-        animationDelay: '2s',
+        animationDelay: '1s',
         animationFillMode: 'both',
         animationDuration: '1s',
       }}

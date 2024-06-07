@@ -5,7 +5,7 @@ export async function LobbyFooter() {
     <div
       className="relative animate-fade-in"
       style={{
-        animationDelay: '4s',
+        animationDelay: '1s',
         animationFillMode: 'both',
         animationDuration: '1s',
       }}
