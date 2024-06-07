@@ -6,6 +6,11 @@ export default defineType({
   title: 'Projects',
   fields: [
     defineField({
+      name: 'year',
+      type: 'number',
+      title: 'Year of your project',
+    }),
+    defineField({
       name: 'title',
       type: 'string',
       title: 'Title of your project',
