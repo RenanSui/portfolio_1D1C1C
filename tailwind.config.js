@@ -2,6 +2,13 @@
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
       screens: {
         xs: '360px',
@@ -28,11 +35,20 @@ module.exports = {
       animation: {
         loading: 'loading 0.75s linear infinite',
         pulse: 'pulse 1.125s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'fade-in': 'fade-in 0.5s ease-out',
       },
       keyframes: {
         loading: {
           from: { transform: 'rotate(0turn)' },
           to: { transform: 'rotate(1turn)' },
+        },
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1',
+          },
         },
       },
     },
