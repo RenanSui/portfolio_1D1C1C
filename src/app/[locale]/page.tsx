@@ -1,8 +1,9 @@
 import { getProjects } from '@/actions/server/sanity'
+import { LobbyFooter } from '@/components/layouts/lobby-footer'
 import { LobbyHeader } from '@/components/layouts/lobby-header'
 import { LobbyMain } from '@/components/layouts/lobby-main'
+import { LobbySidebar } from '@/components/layouts/lobby-sidebar'
 import { NierVignette } from '@/components/nier/nier-vignette'
-import { AnimatedShell } from '@/components/shells/animated-shell'
 import { locales, siteMetadata } from '@/config/site'
 import { getFormattedTranslation } from '@/lib/utils'
 import { Metadata } from 'next'
@@ -28,28 +29,28 @@ export default async function IndexPage({
   const localeConfigPromise = getFormattedTranslation(locale)
 
   return (
-    <AnimatedShell
-      animate={{ opacity: 1, transition: { delay: 0, duration: 1 } }}
+    <div
+      className="relative animate-fade-in"
+      style={{
+        animationDelay: '0s',
+        animationFillMode: 'both',
+        animationDuration: '1s',
+      }}
     >
       <div className="pointer-events-none fixed left-0 top-0 h-full w-full bg-[url(/assets/wallpapers/light-theme-1440.png)] bg-cover" />
-
       <NierVignette variant="dark" className="fixed z-10" />
-
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-16 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
-        <div className="lg:flex lg:justify-between lg:gap-4">
+      <div className="container relative min-h-screen px-6 py-6 lg:flex lg:justify-between lg:gap-4 lg:px-10">
+        <LobbySidebar localeConfigPromise={localeConfigPromise} />
+        <div className="relative pt-24 font-sans lg:w-1/2 lg:py-24">
           <LobbyHeader localeConfigPromise={localeConfigPromise} />
-          <AnimatedShell
-            className="z-[60] pt-24 text-neutral-900 lg:w-1/2 lg:py-24"
-            animate={{ opacity: 1, transition: { delay: 1, duration: 1 } }}
-          >
-            <LobbyMain
-              projectsPromise={projectsPromise}
-              localeConfigPromise={localeConfigPromise}
-            ></LobbyMain>
-          </AnimatedShell>
+          <LobbyMain
+            projectsPromise={projectsPromise}
+            localeConfigPromise={localeConfigPromise}
+          />
+          <LobbyFooter />
         </div>
       </div>
-    </AnimatedShell>
+    </div>
   )
 }
 
