@@ -10,6 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { locales } from '@/config/site'
 import { unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 
@@ -143,4 +144,8 @@ export default async function ArchivePage({
       </div>
     </div>
   )
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
 }
