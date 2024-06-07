@@ -17,6 +17,7 @@ export type localeConfig = Awaited<ReturnType<typeof getFormattedTranslation>>
 
 export type Project = {
   id: string
+  year: number
   title: string
   slug: string | null
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
