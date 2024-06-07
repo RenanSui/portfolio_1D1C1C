@@ -39,9 +39,9 @@ export default async function IndexPage({
     >
       <div className="pointer-events-none fixed left-0 top-0 h-full w-full bg-[url(/assets/wallpapers/light-theme-1440.png)] bg-cover" />
       <NierVignette variant="dark" className="fixed z-10" />
-      <div className="container relative min-h-screen px-6 py-6 lg:flex lg:justify-between lg:gap-4 lg:px-10">
+      <div className="container relative min-h-screen px-6 py-6 lg:flex lg:justify-between lg:gap-4 lg:px-10 lg:py-0">
         <LobbySidebar localeConfigPromise={localeConfigPromise} />
-        <div className="relative pt-24 font-sans lg:w-1/2 lg:py-24">
+        <div className="relative overflow-x-hidden pt-24 font-sans lg:w-1/2 lg:py-24">
           <LobbyHeader localeConfigPromise={localeConfigPromise} />
           <LobbyMain
             projectsPromise={projectsPromise}

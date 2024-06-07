@@ -16,7 +16,7 @@ export const LobbyMain = async ({
   const localeConfig = await localeConfigPromise
 
   return (
-    <main className="relative overflow-x-hidden">
+    <main className="relative">
       <LobbyExperience localeConfig={localeConfig} />
       <LobbyProjects projects={projects} localeConfig={localeConfig} />
     </main>
