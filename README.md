@@ -9,7 +9,6 @@ Bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/can
 
 - **Framework:** [Next.js](https://nextjs.org)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
-- **Animation:** [Framer Motion](https://www.framer.com/motion/)
 
 ## Features
 
