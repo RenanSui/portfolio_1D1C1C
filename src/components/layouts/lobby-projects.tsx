@@ -1,5 +1,6 @@
 import { getProjects } from '@/actions/server/sanity'
 import { Capitalize, getFormattedTranslation } from '@/lib/utils'
+import { getLocale } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import { urlForImage } from '../../../sanity/lib/image'
@@ -16,6 +17,7 @@ export async function LobbyProjects({
   localeConfig,
 }: LobbyProjectsProps) {
   const { titles } = localeConfig.navbarConfig
+  const locale = await getLocale()
 
   return (
     <div
@@ -102,7 +104,7 @@ export async function LobbyProjects({
         </ul>
 
         <Link
-          href="/archive"
+          href={`/${locale}/archive`}
           className="group inline-flex items-baseline text-base font-medium leading-tight text-nier-light-900 transition-colors duration-150 hover:text-red-600 hover:underline focus-visible:text-red-600"
         >
           <span className="pointer-events-none">
