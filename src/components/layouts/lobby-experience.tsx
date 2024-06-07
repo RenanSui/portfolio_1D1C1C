@@ -1,4 +1,5 @@
 import { Capitalize, getFormattedTranslation } from '@/lib/utils'
+import Link from 'next/link'
 import { Section } from '../shells/section'
 import { Icons } from '../ui/icons'
 
@@ -29,21 +30,20 @@ export async function LobbyExperience({ localeConfig }: LobbyExperienceProps) {
           </p>
         </div>
 
-        <a
+        <Link
           href="/resume"
           target="_blank"
           rel="noreferrer noopener"
           aria-label="View Full Résumé (opens in a new tab)"
-          className="group/link inline-flex items-baseline text-base font-medium leading-tight text-nier-light-900 transition-colors duration-150 hover:text-red-600 focus-visible:text-red-600"
+          className="group/link inline-flex items-baseline text-base font-medium leading-tight text-nier-light-900 transition-colors duration-150 hover:text-red-600 hover:underline focus-visible:text-red-600"
         >
           <span className="pointer-events-none">
-            View Full{' '}
+            View Full Résumé
             <span className="inline-block">
-              Résumé{' '}
-              <Icons.externalLink className="ml-1 inline-block h-4 w-4 shrink-0 translate-y-px transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none" />
+              <Icons.externalLink className="ml-1 inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none" />
             </span>
           </span>
-        </a>
+        </Link>
       </Section>
     </div>
   )
