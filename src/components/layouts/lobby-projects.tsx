@@ -37,7 +37,7 @@ export async function LobbyProjects({
           </p>
         </div>
         <ul className="group/list">
-          {projects.map((project, index) => {
+          {projects.splice(0, 4).map((project, index) => {
             return (
               <li className="mb-12" key={`project-${project.id}`}>
                 <div
