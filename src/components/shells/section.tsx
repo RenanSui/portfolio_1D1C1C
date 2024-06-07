@@ -16,6 +16,7 @@ export const Section = ({
   useEffect(() => {
     function changeBodySection() {
       const element = document.querySelector(`#${id}`) as HTMLElement
+      if (!element) return null
 
       const offsetTop = element.offsetTop
       const height = element.clientHeight
