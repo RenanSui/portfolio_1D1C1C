@@ -10,6 +10,7 @@ export async function getProjects() {
       const query = `
     *[_type == 'projects'] | order(_createdAt asc) {
       "id": _id,
+      year,
       title,
       "slug": slug.current,
       titleImage,
