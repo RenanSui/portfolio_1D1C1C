@@ -1,84 +1,94 @@
-import { siteConfig } from '@/config/site'
-import { getFormattedTranslation } from '@/lib/utils'
-import { AnimatedShell } from '../shells/animated-shell'
-import { CardMenuShell } from '../shells/card-menu-shell'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardHeading,
-  CardSeparator,
-} from '../ui/card'
-import { Icons } from '../ui/icons'
+import { Capitalize, getFormattedTranslation } from '@/lib/utils'
+import { Section } from '../shells/section'
 
 type LobbyHeaderProps = {
   localeConfigPromise: ReturnType<typeof getFormattedTranslation>
 }
 
-export const LobbyHeader = async ({
-  localeConfigPromise,
-}: LobbyHeaderProps) => {
+export async function LobbyHeader({ localeConfigPromise }: LobbyHeaderProps) {
   const localeConfig = await localeConfigPromise
+  const { titles } = localeConfig.navbarConfig
 
   return (
-    <header className="sticky z-[60] lg:bottom-0 lg:top-0 lg:flex lg:h-screen lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-      <div className="lg:max-w-[400px]">
-        <Card className="md:max-w-[1280px]">
-          <CardHeader>
-            <CardHeading className="text-2xl tracking-tight sm:text-3xl md:text-3xl">
-              Renan Sui
-            </CardHeading>
-          </CardHeader>
-          <CardContent>
-            <CardDescription as="h2" className="my-0 mb-2 font-medium">
-              {localeConfig.position}
-            </CardDescription>
-            <CardSeparator />
-            <div className="relative">
-              <span className="line-clamp-3 max-w-xs opacity-0 md:text-lg lg:text-xl">
-                {localeConfig.description}
-              </span>
-              <CardDescription className="absolute left-0 top-0 line-clamp-3 max-w-xs leading-normal">
-                {localeConfig.description}
-              </CardDescription>
-            </div>
-          </CardContent>
-        </Card>
-
-        <nav className="hidden lg:block">
-          <CardMenuShell sidebarNav={localeConfig.navbarConfig.navItems} />
-        </nav>
-      </div>
-
-      <ul
-        className="relative z-[60] ml-1 mt-8 flex items-center"
-        aria-label="Social Media"
+    <div
+      className="relative animate-fade-in"
+      style={{
+        animationDelay: '1s',
+        animationFillMode: 'both',
+        animationDuration: '1s',
+      }}
+    >
+      <Section
+        id="about"
+        className="mb-16 scroll-mt-16 font-medium opacity-90 md:mb-24 lg:mb-36 lg:scroll-mt-24"
       >
-        {siteConfig.mainNav.socials.map((social, index) => {
-          const Icon = social.icon ? Icons[social.icon] : Icons.externalLink
-
-          return (
-            <li className="group mr-2 shrink-0 text-xs" key={`icon-${index}`}>
-              <AnimatedShell
-                animate={{
-                  opacity: 1,
-                  transition: { delay: 0.5 + index * 0.5, duration: 1 },
-                }}
-              >
-                <a
-                  className="block rounded p-1 transition-all duration-100"
-                  href={social.href}
-                  target="_blank"
-                >
-                  <span className="sr-only">{social.title}</span>
-                  <Icon className="pointer-events-none h-7 w-7 fill-nier-light-800 text-nier-light-800 transition-colors duration-150 group-hover:fill-nier-light-900 group-hover:text-nier-light-900" />
-                </a>
-              </AnimatedShell>
-            </li>
-          )
-        })}
-      </ul>
-    </header>
+        <div className="relative top-0 z-[60] -mx-6 my-5 mb-4 w-screen px-6 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+          <h2 className="sr-only">{Capitalize(titles.about)}</h2>
+          <p className="font-bold uppercase tracking-widest text-nier-light-900">
+            {titles.about.toUpperCase()}
+          </p>
+        </div>
+        <div
+          className="relative animate-fade-in"
+          style={{
+            animationDelay: '1.3s',
+            animationFillMode: 'both',
+            animationDuration: '1s',
+          }}
+        >
+          <p className="mb-4">
+            Back in 2010, I decided to try my hand at building private servers
+            for my favorite games with my friends and although I was successful
+            in certain aspects I quickly gave up and forgot about it due to
+            problems related to my personal life. Fast forward to today, I ended
+            up giving another chance to
+            <span className="font-bold transition-colors duration-150 hover:text-red-600">
+              {' '}
+              programming{' '}
+            </span>
+            and
+            <span className="font-bold transition-colors duration-150 hover:text-red-600">
+              {' '}
+              game development
+            </span>
+            , but little did I know I was going to be pulled into the
+            <span className="font-bold transition-colors duration-150 hover:text-red-600">
+              {' '}
+              web development
+            </span>{' '}
+            side.
+          </p>
+        </div>
+        <div
+          className="relative animate-fade-in"
+          style={{
+            animationDelay: '1.6s',
+            animationFillMode: 'both',
+            animationDuration: '1s',
+          }}
+        >
+          <p className="mb-4">
+            My main focus these days is building accessible user-centered
+            interfaces. I most enjoy building software in the sweet spot where
+            design and engineering meet — things that look good but are also
+            built well under the hood.
+          </p>
+        </div>
+        <div
+          className="relative animate-fade-in"
+          style={{
+            animationDelay: '2s',
+            animationFillMode: 'both',
+            animationDuration: '1s',
+          }}
+        >
+          <p className="">
+            In the free time I like to play Final Fantasy and Resident Evil
+            games. When I&apos;m not at the computer, I&apos;m usually reading
+            economic books or helping my uncles at their car workshop.
+          </p>
+        </div>
+      </Section>
+    </div>
   )
 }
