@@ -20,7 +20,11 @@ export async function getProjects() {
       technologies
     }`
 
-      return await client.fetch<Project[]>(query)
+      const projects = await client.fetch<Project[]>(query)
+
+      return projects
+        .sort((project1, project2) => project1.year - project2.year)
+        .reverse()
     },
     ['projects'],
     {
