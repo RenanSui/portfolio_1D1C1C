@@ -55,3 +55,7 @@ export const getFormattedTranslation = async (locale: string) => {
     },
   }
 }
+
+export function Capitalize(string: string) {
+  return string[0]?.toUpperCase() + string.slice(1).toLowerCase()
+}
