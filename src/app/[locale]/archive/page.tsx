@@ -1,4 +1,5 @@
 import { getProjects } from '@/actions/server/sanity'
+import { FocusText } from '@/components/focus-text'
 import { NierVignette } from '@/components/nier/nier-vignette'
 import { Section } from '@/components/shells/section'
 import { Icons } from '@/components/ui/icons'
@@ -82,7 +83,7 @@ export default async function ArchivePage({
                       </TableCell>
                       <TableCell className="font-medium">
                         <div className="hidden font-bold sm:block">
-                          {project.title}
+                          <FocusText>{project.title}</FocusText>
                         </div>
                         <Link
                           href={project.liveDemoLink}
