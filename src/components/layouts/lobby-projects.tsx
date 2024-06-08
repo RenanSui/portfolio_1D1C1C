@@ -1,6 +1,6 @@
 import { getProjects } from '@/actions/server/sanity'
 import { Capitalize, getFormattedTranslation } from '@/lib/utils'
-import { getLocale } from 'next-intl/server'
+import { getLocale, getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import { urlForImage } from '../../../sanity/lib/image'
@@ -18,6 +18,10 @@ export async function LobbyProjects({
 }: LobbyProjectsProps) {
   const { titles } = localeConfig.navbarConfig
   const locale = await getLocale()
+  const intl = await getTranslations({ locale, namespace: 'Index' })
+  const footer = {
+    internal_link_1: intl(`navItems.projects.footer.internal_link_1`) ?? '',
+  }
 
   return (
     <div
@@ -108,7 +112,7 @@ export async function LobbyProjects({
           className="group inline-flex items-baseline text-base font-medium leading-tight text-nier-light-900 transition-colors duration-150 hover:text-red-600 hover:underline focus-visible:text-red-600"
         >
           <span className="pointer-events-none">
-            View Full Project Archive
+            {footer.internal_link_1}
             <span className="inline-block">
               <Icons.internalLink className="ml-1 inline-block h-4 w-4 shrink-0 transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none" />
             </span>

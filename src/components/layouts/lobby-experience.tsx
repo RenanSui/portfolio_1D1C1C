@@ -2,6 +2,7 @@ import { Capitalize, getFormattedTranslation } from '@/lib/utils'
 import Link from 'next/link'
 import { Section } from '../shells/section'
 import { Icons } from '../ui/icons'
+import { getLocale, getTranslations } from 'next-intl/server'
 
 type LobbyExperienceProps = {
   localeConfig: Awaited<ReturnType<typeof getFormattedTranslation>>
@@ -9,6 +10,11 @@ type LobbyExperienceProps = {
 
 export async function LobbyExperience({ localeConfig }: LobbyExperienceProps) {
   const { titles } = localeConfig.navbarConfig
+  const locale = await getLocale()
+  const intl = await getTranslations({ locale, namespace: 'Index' })
+  const footer = {
+    external_link_1: intl(`navItems.experience.footer.external_link_1`) ?? '',
+  }
 
   return (
     <div
@@ -38,7 +44,7 @@ export async function LobbyExperience({ localeConfig }: LobbyExperienceProps) {
           className="group/link inline-flex items-baseline text-base font-medium leading-tight text-nier-light-900 transition-colors duration-150 hover:text-red-600 hover:underline focus-visible:text-red-600"
         >
           <span className="pointer-events-none">
-            View Full Résumé
+            {footer.external_link_1}
             <span className="inline-block">
               <Icons.externalLink className="ml-1 inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none" />
             </span>
