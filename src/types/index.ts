@@ -15,6 +15,8 @@ export type Socials = {
 
 export type localeConfig = Awaited<ReturnType<typeof getFormattedTranslation>>
 
+export type LocaleType = 'en' | 'pt-br'
+
 export type Project = {
   id: string
   year: number
@@ -22,7 +24,7 @@ export type Project = {
   slug: string | null
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   titleImage: any
-  description: string
+  descriptions: { locale: LocaleType; message: string }[]
   liveDemoLink: string
   githubLink: string
   technologies?: string[]
