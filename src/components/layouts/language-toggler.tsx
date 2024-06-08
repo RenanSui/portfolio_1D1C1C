@@ -10,7 +10,7 @@ import {
 } from '../ui/dropdown-menu'
 import { Icons } from '../ui/icons'
 
-export const LanguageToggler = () => {
+export const LanguageToggler = ({ pathname }: { pathname?: string }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -24,7 +24,10 @@ export const LanguageToggler = () => {
         className="relative z-[100] rounded-none border-none border-transparent bg-nier-light-100 p-0 dark:border-transparent dark:bg-nier-light-100"
       >
         <div className="mx-1 mb-1 mt-1 h-[1px] bg-nier-light-800 opacity-70" />
-        <Link href="/en" className="group hover:animate-pulse">
+        <Link
+          href={`/en/${pathname ?? ''}`}
+          className="group hover:animate-pulse"
+        >
           <span className="pointer-events-none my-1 block h-[2px] w-full bg-nier-light-800 opacity-0 group-hover:opacity-100" />
           <DropdownMenuItem
             role="english-toggle"
@@ -35,7 +38,10 @@ export const LanguageToggler = () => {
           </DropdownMenuItem>
           <span className="pointer-events-none my-1 block h-[2px] w-full bg-nier-light-800 opacity-0 group-hover:opacity-100" />
         </Link>
-        <Link href="/pt-br" className="group hover:animate-pulse">
+        <Link
+          href={`/pt-br/${pathname ?? ''}`}
+          className="group hover:animate-pulse"
+        >
           <span className="pointer-events-none my-1 block h-[2px] w-full bg-nier-light-800 opacity-0 group-hover:opacity-100" />
           <DropdownMenuItem
             role="english-toggle"

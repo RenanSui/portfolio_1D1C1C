@@ -1,9 +1,9 @@
 import { LanguageToggler } from './language-toggler'
 
-export async function LobbyFooter() {
+export async function LobbyFooter({ pathname }: { pathname?: string }) {
   return (
     <div
-      className="relative animate-fade-in"
+      className="relative animate-fade-in font-sans"
       style={{
         animationDelay: '1s',
         animationFillMode: 'both',
@@ -76,7 +76,7 @@ export async function LobbyFooter() {
         </p>
 
         <div className="relative z-[60] mb-auto ml-1 mt-2 flex justify-between gap-4">
-          <LanguageToggler />
+          <LanguageToggler pathname={pathname} />
         </div>
       </footer>
     </div>
