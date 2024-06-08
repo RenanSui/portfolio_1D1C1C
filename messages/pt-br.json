@@ -34,6 +34,36 @@
       }
     }
   },
+  "Archive": {
+    "title": "Projetos",
+    "table": {
+      "year": {
+        "title": "Ano",
+        "fixed_size": "true",
+        "hidden": "false"
+      },
+      "project": {
+        "title": "Projetos",
+        "fixed_size": "false",
+        "hidden": "false"
+      },
+      "made_at": {
+        "title": "Feito em",
+        "fixed_size": "true",
+        "hidden": "true"
+      },
+      "built_with": {
+        "title": "Contruído com",
+        "fixed_size": "false",
+        "hidden": "true"
+      },
+      "link": {
+        "title": "Link",
+        "fixed_size": "false",
+        "hidden": "true"
+      }
+    }
+  },
   "Metadata": {
     "description": "Site de portfólio pessoal"
   }

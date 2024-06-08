@@ -34,6 +34,36 @@
       }
     }
   },
+  "Archive": {
+    "title": "All Projects",
+    "table": {
+      "year": {
+        "title": "Year",
+        "fixed_size": "true",
+        "hidden": "false"
+      },
+      "project": {
+        "title": "Project",
+        "fixed_size": "false",
+        "hidden": "false"
+      },
+      "made_at": {
+        "title": "Made at",
+        "fixed_size": "true",
+        "hidden": "true"
+      },
+      "built_with": {
+        "title": "Built with",
+        "fixed_size": "false",
+        "hidden": "true"
+      },
+      "link": {
+        "title": "Link",
+        "fixed_size": "false",
+        "hidden": "true"
+      }
+    }
+  },
   "Metadata": {
     "description": "Personal Portfolio Website"
   }
