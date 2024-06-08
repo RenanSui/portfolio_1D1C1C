@@ -9,6 +9,7 @@ Bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/can
 
 - **Framework:** [Next.js](https://nextjs.org)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
+- **Content:** [Sanity CMS](https://www.sanity.io)
 
 ## Features
 
