@@ -6,7 +6,14 @@
       "about": {
         "id": "0",
         "title": "sobre",
-        "href": "about"
+        "href": "about",
+        "info_1": {
+          "paragraph_1": "Me chamo",
+          "link_1": "Renan",
+          "paragraph_2": "construindo coisas para a web. Gosto de trabalhar em projetos frontend, jogar videogame e ler sobre criptomoedas. Atualmente estou construindo",
+          "link_2": "Spenso",
+          "paragraph_3": "um gerenciador de finanças pessoais desenvolvido com os recursos mais recentes do Next.js."
+        }
       },
       "experience": {
         "id": "1",
