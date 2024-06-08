@@ -13,17 +13,24 @@
           "paragraph_2": "construindo coisas para a web. Gosto de trabalhar em projetos frontend, jogar videogame e ler sobre criptomoedas. Atualmente estou construindo",
           "link_2": "Spenso",
           "paragraph_3": "um gerenciador de finanças pessoais desenvolvido com os recursos mais recentes do Next.js."
-        }
+        },
+        "footer": {}
       },
       "experience": {
         "id": "1",
         "title": "experiência",
-        "href": "experience"
+        "href": "experience",
+        "footer": {
+          "external_link_1": "Ver currículo completo"
+        }
       },
       "projects": {
         "id": "2",
         "title": "projetos",
-        "href": "projects"
+        "href": "projects",
+        "footer": {
+          "internal_link_1": "Ver todos os projetos"
+        }
       }
     }
   },

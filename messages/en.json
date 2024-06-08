@@ -13,17 +13,24 @@
           "paragraph_2": "building things for the web. I enjoy working on frontend projects, playing video games, and read about cryptocurrency. Currently, I'm building",
           "link_2": "Spenso",
           "paragraph_3": "a personal finance manager built with the latest Next.js features."
-        }
+        },
+        "footer": {}
       },
       "experience": {
         "id": "1",
         "title": "experience",
-        "href": "experience"
+        "href": "experience",
+        "footer": {
+          "external_link_1": "View Full Résumé"
+        }
       },
       "projects": {
         "id": "2",
         "title": "projects",
-        "href": "projects"
+        "href": "projects",
+        "footer": {
+          "internal_link_1": "View Full Project Archive"
+        }
       }
     }
   },
