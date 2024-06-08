@@ -37,7 +37,7 @@ export async function LobbyExperience({ localeConfig }: LobbyExperienceProps) {
         </div>
 
         <Link
-          href="/resume"
+          href={`/${locale}/resume`}
           target="_blank"
           rel="noreferrer noopener"
           aria-label="View Full Résumé (opens in a new tab)"
