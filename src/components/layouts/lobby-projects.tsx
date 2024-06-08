@@ -1,5 +1,6 @@
 import { getProjects } from '@/actions/server/sanity'
 import { Capitalize, getFormattedTranslation } from '@/lib/utils'
+import { LocaleType } from '@/types'
 import { getLocale, getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -17,7 +18,7 @@ export async function LobbyProjects({
   localeConfig,
 }: LobbyProjectsProps) {
   const { titles } = localeConfig.navbarConfig
-  const locale = await getLocale()
+  const locale = (await getLocale()) as LocaleType
   const intl = await getTranslations({ locale, namespace: 'Index' })
   const footer = {
     internal_link_1: intl(`navItems.projects.footer.internal_link_1`) ?? '',
@@ -73,7 +74,9 @@ export async function LobbyProjects({
                       </h3>
 
                       <p className="mt-2 text-sm leading-normal">
-                        {project.description}
+                        {project.descriptions?.map((desc) => {
+                          return desc.locale === locale ? desc.message : ''
+                        })}
                       </p>
 
                       <ul
@@ -93,7 +96,11 @@ export async function LobbyProjects({
                     </div>
                     <Image
                       src={urlForImage(project.titleImage)}
-                      alt={project.description}
+                      alt={project.descriptions
+                        ?.map((desc) => {
+                          return desc.locale === locale ? desc.message : ''
+                        })
+                        .join('')}
                       className="rounded border-2 border-nier-light-500/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1"
                       loading="lazy"
                       width={200}
