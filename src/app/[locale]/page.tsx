@@ -42,7 +42,10 @@ export default async function IndexPage({
       <div className="relative mx-auto min-h-screen max-w-screen-xl px-6 py-6 lg:flex lg:justify-between lg:gap-4 lg:px-10 lg:py-0">
         <LobbySidebar localeConfigPromise={localeConfigPromise} />
         <div className="relative overflow-x-hidden pt-24 font-sans lg:w-1/2 lg:py-24">
-          <LobbyHeader localeConfigPromise={localeConfigPromise} />
+          <LobbyHeader
+            localeConfigPromise={localeConfigPromise}
+            locale={locale}
+          />
           <LobbyMain
             projectsPromise={projectsPromise}
             localeConfigPromise={localeConfigPromise}

@@ -1,14 +1,28 @@
 import { Capitalize, getFormattedTranslation } from '@/lib/utils'
+import { getTranslations } from 'next-intl/server'
 import { FocusText } from '../focus-text'
 import { Section } from '../shells/section'
 
 type LobbyHeaderProps = {
   localeConfigPromise: ReturnType<typeof getFormattedTranslation>
+  locale: string
 }
 
-export async function LobbyHeader({ localeConfigPromise }: LobbyHeaderProps) {
+export async function LobbyHeader({
+  localeConfigPromise,
+  locale,
+}: LobbyHeaderProps) {
   const localeConfig = await localeConfigPromise
+  const intl = await getTranslations({ locale, namespace: 'Index' })
   const { titles } = localeConfig.navbarConfig
+
+  const aboutInfo = {
+    paragraph_1: intl(`navItems.about.info_1.paragraph_1`) ?? '',
+    link_1: intl(`navItems.about.info_1.link_1`) ?? '',
+    paragraph_2: intl(`navItems.about.info_1.paragraph_2`) ?? '',
+    link_2: intl(`navItems.about.info_1.link_2`) ?? '',
+    paragraph_3: intl(`navItems.about.info_1.paragraph_3`) ?? '',
+  }
 
   return (
     <div
@@ -31,15 +45,15 @@ export async function LobbyHeader({ localeConfigPromise }: LobbyHeaderProps) {
         </div>
         <div className="prose">
           <p className="leading-loose">
-            I&apos;m <FocusText>Renan</FocusText>, building things for the web.
-            I enjoy working on frontend projects, playing video games, and
-            skateboarding. Currently, I&apos;m building{' '}
+            {aboutInfo.paragraph_1} <FocusText>Renan</FocusText>,{' '}
+            {aboutInfo.paragraph_2}{' '}
             <FocusText>
               <a href="https://spenso.vercel.app" target="_blank">
                 Spenso
               </a>
             </FocusText>
-            , a personal finance manager built with the latest Next.js features.
+            , {aboutInfo.paragraph_3}
+            {/* , a personal finance manager built with the latest Next.js features. */}
           </p>
         </div>
       </Section>
