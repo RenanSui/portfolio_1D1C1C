@@ -56,6 +56,20 @@ export const getFormattedTranslation = async (locale: string) => {
   }
 }
 
+export const getArchiveTranslation = async (locale: string) => {
+  const intl = await getTranslations({ locale, namespace: 'Archive' })
+  const keys = ['year', 'project', 'made_at', 'built_with', 'link'] as const
+
+  return {
+    title: intl('title') ?? '',
+    tables: keys.map((key) => ({
+      title: intl(`table.${key}.title`) ?? '',
+      fixed_size: intl(`table.${key}.fixed_size`) === 'true',
+      hidden: intl(`table.${key}.hidden`) === 'true',
+    })),
+  }
+}
+
 export function Capitalize(string: string) {
   return string[0]?.toUpperCase() + string.slice(1).toLowerCase()
 }
