@@ -1,3 +1,4 @@
+import { locales } from '@/config/site'
 import { unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
 
 export default function ResumePage({
@@ -16,4 +17,8 @@ export default function ResumePage({
       />
     </main>
   )
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
 }
