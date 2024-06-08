@@ -12,6 +12,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { locales } from '@/config/site'
+import { cn, getArchiveTranslation } from '@/lib/utils'
 import { unstable_setRequestLocale as setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 
@@ -21,8 +22,8 @@ export default async function ArchivePage({
   params: { locale: string }
 }) {
   setRequestLocale(locale)
-
   const projects = await getProjects()
+  const { tables, title } = await getArchiveTranslation(locale)
 
   return (
     <div
@@ -50,28 +51,30 @@ export default async function ArchivePage({
                 <span>Renan Sui</span>
               </Link>
               <h1 className="text-4xl font-bold tracking-tight text-nier-light-900 sm:text-5xl">
-                All Projects
+                {title}
               </h1>
             </div>
 
             <Table className="mt-12 w-full border-collapse text-left">
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[100px] font-bold text-zinc-900">
-                    Year
-                  </TableHead>
-                  <TableHead className="font-bold text-zinc-900">
-                    Project
-                  </TableHead>
-                  <TableHead className="hidden w-[100px] font-bold text-zinc-900 lg:table-cell">
-                    Made at
-                  </TableHead>
-                  <TableHead className="hidden font-bold text-zinc-900 lg:table-cell">
-                    Built with
-                  </TableHead>
-                  <TableHead className="hidden font-bold text-zinc-900 sm:table-cell">
-                    Link
-                  </TableHead>
+                  {tables.map((table, index) => {
+                    return (
+                      <TableHead
+                        className={cn(
+                          'font-bold text-zinc-900',
+                          table.fixed_size ? 'w-[100px]' : '',
+                          table.hidden ? 'hidden lg:table-cell' : '',
+                          table.title.toLowerCase() === 'link'
+                            ? 'sm:table-cell'
+                            : '',
+                        )}
+                        key={`table-${index}`}
+                      >
+                        {table.title}
+                      </TableHead>
+                    )
+                  })}
                 </TableRow>
               </TableHeader>
               <TableBody>
