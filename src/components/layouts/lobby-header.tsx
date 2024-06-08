@@ -1,4 +1,5 @@
 import { Capitalize, getFormattedTranslation } from '@/lib/utils'
+import { FocusText } from '../focus-text'
 import { Section } from '../shells/section'
 
 type LobbyHeaderProps = {
@@ -28,64 +29,17 @@ export async function LobbyHeader({ localeConfigPromise }: LobbyHeaderProps) {
             {titles.about.toUpperCase()}
           </p>
         </div>
-        <div
-          className="relative animate-fade-in"
-          style={{
-            animationDelay: '1.3s',
-            animationFillMode: 'both',
-            animationDuration: '1s',
-          }}
-        >
-          <p className="mb-4">
-            Back in 2010, I decided to try my hand at building private servers
-            for my favorite games with my friends and although I was successful
-            in certain aspects I quickly gave up and forgot about it due to
-            problems related to my personal life. Fast forward to today, I ended
-            up giving another chance to
-            <span className="font-bold transition-colors duration-150 hover:text-red-600">
-              {' '}
-              programming{' '}
-            </span>
-            and
-            <span className="font-bold transition-colors duration-150 hover:text-red-600">
-              {' '}
-              game development
-            </span>
-            , but little did I know I was going to be pulled into the
-            <span className="font-bold transition-colors duration-150 hover:text-red-600">
-              {' '}
-              web development
-            </span>{' '}
-            side.
-          </p>
-        </div>
-        <div
-          className="relative animate-fade-in"
-          style={{
-            animationDelay: '1.6s',
-            animationFillMode: 'both',
-            animationDuration: '1s',
-          }}
-        >
-          <p className="mb-4">
-            My main focus these days is building accessible user-centered
-            interfaces. I most enjoy building software in the sweet spot where
-            design and engineering meet — things that look good but are also
-            built well under the hood.
-          </p>
-        </div>
-        <div
-          className="relative animate-fade-in"
-          style={{
-            animationDelay: '2s',
-            animationFillMode: 'both',
-            animationDuration: '1s',
-          }}
-        >
-          <p className="">
-            In the free time I like to play Final Fantasy and Resident Evil
-            games. When I&apos;m not at the computer, I&apos;m usually reading
-            economic books or helping my uncles at their car workshop.
+        <div className="prose">
+          <p className="leading-loose">
+            I&apos;m <FocusText>Renan</FocusText>, building things for the web.
+            I enjoy working on frontend projects, playing video games, and
+            skateboarding. Currently, I&apos;m building{' '}
+            <FocusText>
+              <a href="https://spenso.vercel.app" target="_blank">
+                Spenso
+              </a>
+            </FocusText>
+            , a personal finance manager built with the latest Next.js features.
           </p>
         </div>
       </Section>
