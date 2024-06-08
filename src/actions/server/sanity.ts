@@ -14,7 +14,7 @@ export async function getProjects() {
       title,
       "slug": slug.current,
       titleImage,
-      description,
+      descriptions,
       liveDemoLink,
       githubLink,
       technologies
