@@ -30,10 +30,26 @@ export default defineType({
       title: 'Image of the project',
     }),
     defineField({
-      name: 'description',
-      type: 'text',
-      title: 'Description of the project',
-      initialValue: '',
+      name: 'descriptions',
+      type: 'array',
+      title: 'Intl Descriptions of the project',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'locale',
+              title: 'locale',
+              type: 'string',
+            },
+            {
+              name: 'message',
+              title: 'message',
+              type: 'string',
+            },
+          ],
+        },
+      ],
     }),
     defineField({
       name: 'liveDemoLink',
